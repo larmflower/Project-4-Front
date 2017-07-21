@@ -14,3 +14,40 @@ html,body {
 .button.is-primary {
   background-color: #7fc1b2;
 }
+
+nav {
+  h1 {
+    letter-spacing: 1px;
+    font-weight: 700;
+    font-size: 24px;
+  }
+  li {
+    display: inline-block;
+  }
+}
+
+body {
+  .home {
+    background-image: url('../images/homepage.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 610px;
+  }
+  h2 {
+    font-size: 24px;
+  }
+  .image {
+    margin: 20px auto;
+  }
+  .button {
+    margin: 20px auto;
+  }
+  .sm {
+    text-align: center;
+  }
+}
+
+.hero {
+  margin: 10px auto;
+  padding: 10px auto;
+}

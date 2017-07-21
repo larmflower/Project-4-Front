@@ -2,8 +2,8 @@ angular
   .module('finalProject')
   .controller('MainCtrl', MainCtrl);
 
-MainCtrl.$inject = ['$auth', '$state'];
-function MainCtrl($auth, $state) {
+MainCtrl.$inject = ['$auth', '$state', '$rootScope', '$scope', '$transitions'];
+function MainCtrl($auth, $state, $rootScope, $scope, $transitions) {
   const vm = this;
 
 
@@ -11,9 +11,24 @@ function MainCtrl($auth, $state) {
 
   vm.logout = logout;
 
+  $rootScope.$on('error', (e, err) => {
+    vm.stateHasChanged = false;
+
+    if(err.status === 401) {
+      vm.message = err.data.message;
+      $state.go('login');
+    }
+  });
+
+  $transitions.onSuccess({}, (transition) => {
+    vm.pageName = transition.$to().name;
+    if(vm.stateHasChanged) vm.message = null;
+    if(!vm.stateHasChanged) vm.stateHasChanged = true;
+  });
+
   function logout() {
     $auth.logout();
-    $state.go('login');
+    $state.go('home');
   }
 
 }

@@ -12,34 +12,40 @@
   </head>
   <body>
 
-  <nav class="nav">
-      <div class="nav-left">
-        <a class="nav-item logo" ui-sref="home">
-          <h1>Make News</h1>
-        </a>
-      </div>
-
-      <span class="nav-toggle" ng-click="menuIsOpen = !menuIsOpen">
-        <span></span>
-        <span></span>
-        <span></span>
-      </span>
-
-      <div class="nav-right nav-menu" ng-class="{ 'is-active': menuIsOpen }">
-        <ul>
-          <li><a class="nav-item" ui-sref="postsIndex">Posts</a></li>
-          <li><a class="nav-item" ui-sref="usersIndex">Users</a></li>
-          <li ng-if="!main.isAuthenticated()"><a class="nav-item" ui-sref="login">Login</a></li>
-          <li ng-if="!main.isAuthenticated()"><a class="nav-item" ui-sref="register">Register</a></li>
-          <li ng-if="main.isAuthenticated()"><a class="nav-item" ng-click="main.logout()">Logout</a></li>
-        </ul>
-      </div>
-  </nav>
-
   <main ng-controller="MainCtrl as main">
+    <nav class="nav">
+        <div class="nav-left">
+          <a class="nav-item logo" ui-sref="home">
+            <h1>Make News</h1>
+          </a>
+        </div>
+
+        <span class="nav-toggle" ng-click="menuIsOpen = !menuIsOpen">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+
+        <div class="nav-right nav-menu" ng-class="{ 'is-active': menuIsOpen }">
+          <ul>
+            <li ng-if="main.isAuthenticated()"><a class="nav-item" ui-sref="postsIndex">Posts</a></li>
+            <li ng-if="main.isAuthenticated()"><a class="nav-item" ui-sref="usersIndex">Users</a></li>
+            <li ng-if="!main.isAuthenticated()"><a class="nav-item" ui-sref="login">Login</a></li>
+            <li ng-if="!main.isAuthenticated()"><a class="nav-item" ui-sref="register">Register</a></li>
+            <li ng-if="main.isAuthenticated()"><a href="#" class="nav-item" ng-click="main.logout()">Logout</a></li>
+          </ul>
+        </div>
+    </nav>
+
     <div class="notification" ng-if="main.message">{{ main.message }}</div>
 
     <main ui-view class="container"></main>
+
+    <section class="hero">
+      <div class="content has-text-centered">
+        <p>By <a href="https://github.com/larmflower" target="_blank">Lauren Armbrüst</a> & <a href="https://github.com/alexandriako" target="_blank">Alexandria Okamoto</a></p>
+      </div>
+    </section>
   </main>
 
   </body>
