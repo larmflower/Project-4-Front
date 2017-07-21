@@ -2,14 +2,18 @@ angular
   .module('finalProject')
   .controller('MainCtrl', MainCtrl);
 
-MainCtrl.$inject = ['$http', 'API_URL'];
-function MainCtrl($http, API_URL) {
+MainCtrl.$inject = ['$auth', '$state'];
+function MainCtrl($auth, $state) {
   const vm = this;
 
-  $http({
-    method: 'GET',
-    url: `${API_URL}/users`
-  })
-  .then((res) => vm.users = res.data);
-  
+
+  vm.isAuthenticated = $auth.isAuthenticated;
+
+  vm.logout = logout;
+
+  function logout() {
+    $auth.logout();
+    $state.go('login');
+  }
+
 }

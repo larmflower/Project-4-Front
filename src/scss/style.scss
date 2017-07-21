@@ -1,1 +1,16 @@
 // Import all of your scss files here
+@import "bulma/sass/utilities/initial-variables";
+@import "bulma/bulma";
+
+
+* {
+  font-family: 'Karla', sans-serif;
+}
+
+html,body {
+  height: 100%;
+}
+
+.button.is-primary {
+  background-color: #7fc1b2;
+}

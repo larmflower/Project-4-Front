@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+
+<section class="section">
+  <div class="columns is-multiline">
+    <div ng-repeat="post in postsIndex.all" class="column is-half">
+      <h2>"{{ post.description }}"</h2>
+      <h2>"{{ post.src }}""</h2>
+      <h2>{{ post.user.username }}</h2>
+    </div>
+  </div>
+</section>

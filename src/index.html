@@ -1,20 +1,46 @@
 <!DOCTYPE html>
 <html ng-app="finalProject">
   <head>
+    <base href="/">
     <meta charset="utf-8">
     <title>Make News</title>
+    <link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
     <!-- inject:js -->
     <!-- endinject -->
     <!-- inject:css -->
     <!-- endinject -->
   </head>
-  <body ng-controller="MainCtrl as main">
-    <h1>Make News</h1>
-    <ul>
-      <li ng-repeat="user in main.users">
-        <strong>{{ user.username }}</strong>
-        <p><em>{{ user.firstname }} {{ user.lastname }}</em></p>
-      </li>
-    </ul>
+  <body>
+
+  <nav class="nav">
+      <div class="nav-left">
+        <a class="nav-item logo" ui-sref="home">
+          <h1>Make News</h1>
+        </a>
+      </div>
+
+      <span class="nav-toggle" ng-click="menuIsOpen = !menuIsOpen">
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+
+      <div class="nav-right nav-menu" ng-class="{ 'is-active': menuIsOpen }">
+        <ul>
+          <li><a class="nav-item" ui-sref="postsIndex">Posts</a></li>
+          <li><a class="nav-item" ui-sref="usersIndex">Users</a></li>
+          <li ng-if="!main.isAuthenticated()"><a class="nav-item" ui-sref="login">Login</a></li>
+          <li ng-if="!main.isAuthenticated()"><a class="nav-item" ui-sref="register">Register</a></li>
+          <li ng-if="main.isAuthenticated()"><a class="nav-item" ng-click="main.logout()">Logout</a></li>
+        </ul>
+      </div>
+  </nav>
+
+  <main ng-controller="MainCtrl as main">
+    <div class="notification" ng-if="main.message">{{ main.message }}</div>
+
+    <main ui-view class="container"></main>
+  </main>
+
   </body>
 </html>
