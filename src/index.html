@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html ng-app="finalProject">
+
 <head>
   <base href="/">
   <meta charset="utf-8">
   <title>Make News</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico" sizes="32x32" />
   <link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- inject:js -->
@@ -14,28 +16,29 @@
 <body ng-controller="MainCtrl as main">
 
   <nav class="nav">
-    <div class="nav-left">
-      <a class="nav-item logo" ui-sref="home">
-        <h1>Make News</h1>
-      </a>
-    </div>
+      <div class="nav-left">
+        <a class="nav-item logo" ui-sref="home">
+          <h1 class="hvr-float-shadow">Make News</h1>
+        </a>
+      </div>
 
-    <span class="nav-toggle" ng-click="menuIsOpen = !menuIsOpen">
-      <span></span>
-      <span></span>
-      <span></span>
-    </span>
+      <span class="nav-toggle" ng-click="menuIsOpen = !menuIsOpen">
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
 
-
-    <div class="nav-right nav-menu" ng-class="{ 'is-active': menuIsOpen }">
-      <ul>
-        <li><a class="nav-item" ui-sref="postsIndex">Posts</a></li>
-        <li><a class="nav-item" ui-sref="usersIndex">Users</a></li>
-        <li ng-if="!main.isAuthenticated()"><a class="nav-item" ui-sref="login">Login</a></li>
-        <li ng-if="!main.isAuthenticated()"><a class="nav-item" ui-sref="register">Register</a></li>
-        <li ng-if="main.isAuthenticated()"><a class="nav-item" ng-click="main.logout()">Logout</a></li>
-      </ul>
-    </div>
+      <div class="nav-right nav-menu" ng-class="{ 'is-active': menuIsOpen }">
+        <ul>
+          <li ng-if="!main.isAuthenticated()"><a class="nav-item" ui-sref="about">About</a></li>
+          <li ng-if="main.isAuthenticated()"><a class="nav-item" ui-sref="postsIndex">Posts</a></li>
+          <li ng-if="main.isAuthenticated()"><a class="nav-item" ui-sref="postsNew">New Post</a></li>
+          <li ng-if="main.isAuthenticated()"><a class="nav-item" ui-sref="usersIndex">Users</a></li>
+          <li ng-if="!main.isAuthenticated()"><a class="nav-item" ui-sref="login">Login</a></li>
+          <li ng-if="!main.isAuthenticated()"><a class="nav-item" ui-sref="register">Register</a></li>
+          <li ng-if="main.isAuthenticated()"><a href="#" class="nav-item" ng-click="main.logout()">Logout</a></li>
+        </ul>
+      </div>
   </nav>
 
   <main>
@@ -82,6 +85,17 @@
     <div class="button is-primary" ng-click="main.getArticle('techcrunch')">Tech Crunch</div>
 
 
+
+
+    <div class="notification" ng-if="main.message">{{ main.message }}</div>
+
+    <main ui-view class="container"></main>
+
+    <section class="hero">
+      <div class="content has-text-centered">
+        <p>By <a href="https://github.com/larmflower" target="_blank">Lauren Armbrüst</a> & <a href="https://github.com/alexandriako" target="_blank">Alexandria Okamoto</a></p>
+      </div>
+    </section>
   </main>
 
 </body>

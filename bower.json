@@ -23,5 +23,8 @@
   },
   "resolutions": {
     "angular": "^1.5.8"
+    "satellizer": "^0.15.5",
+    "angular-animate": "^1.6.5",
+    "ngvideo": "^1.0.3"
   }
 }

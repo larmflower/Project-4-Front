@@ -12,9 +12,54 @@ html,body {
   height: 100%;
 }
 
-.button.is-primary {
-  background-color: #7fc1b2;
+body {
+
+  .button.is-primary {
+    background-color: #7fc1b2;
+  }
+
+  nav {
+    h1 {
+      letter-spacing: 1px;
+      font-weight: 700;
+      font-size: 24px;
+    }
+    li {
+      display: inline-block;
+    }
+  }
+
+  .home {
+    background-image: url('../images/homepage.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 610px;
+  }
+  h2 {
+    font-size: 24px;
+  }
+  .image {
+    margin: 20px auto;
+  }
+  .button {
+    margin: 20px auto;
+  }
+  .sm {
+    text-align: center;
+  }
+  .hero {
+    margin: 10px auto;
+    padding: 10px auto;
+  }
+
+  .video {
+    background-image: url('../images/about.png');
+    background-size: cover;
+    background-position: center;
+    height: 610px;
+  }
 }
+
 
 img {
   box-shadow: 0px 3px 10px #7fc1b2;
@@ -24,3 +69,14 @@ img {
   box-shadow: 0px 3px 10px #7fc1b2;
 
 }
+
+
+
+// video {
+//   position: absolute; // Play the video in full screen mode
+//   top: 0px;
+//   left: 0px;
+//   min-width: 100%;
+//   min-height: 100%;
+//   z-index: -1; // Put the video behind all other elements
+// }

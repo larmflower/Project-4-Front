@@ -4,6 +4,8 @@ angular
 
 MainCtrl.$inject = ['$auth', '$state', 'newsService', 'filterFilter', '$scope']; //>>>>>>>???? filterFilter
 function MainCtrl($auth, $state, newsService, filterFilter, $scope) {
+MainCtrl.$inject = ['$auth', '$state', '$rootScope', '$scope', '$transitions'];
+function MainCtrl($auth, $state, $rootScope, $scope, $transitions) {
   const vm = this;
   // vm.all = Main.query(); //>>?????? service.query?
 
@@ -16,9 +18,24 @@ function MainCtrl($auth, $state, newsService, filterFilter, $scope) {
 
   vm.logout = logout;
 
+  $rootScope.$on('error', (e, err) => {
+    vm.stateHasChanged = false;
+
+    if(err.status === 401) {
+      vm.message = err.data.message;
+      $state.go('login');
+    }
+  });
+
+  $transitions.onSuccess({}, (transition) => {
+    vm.pageName = transition.$to().name;
+    if(vm.stateHasChanged) vm.message = null;
+    if(!vm.stateHasChanged) vm.stateHasChanged = true;
+  });
+
   function logout() {
     $auth.logout();
-    $state.go('login');
+    $state.go('home');
   }
 
   vm.articles = [];
@@ -29,7 +46,7 @@ function MainCtrl($auth, $state, newsService, filterFilter, $scope) {
     .then((res)=>{
       vm.articles = res.articles;
       filterArticles();
-  
+
     });// object
     // vm.articles = newsService.getNews(get);
 
@@ -41,4 +58,5 @@ function MainCtrl($auth, $state, newsService, filterFilter, $scope) {
     () => vm.q
   ], filterArticles);
 
+}
 }
