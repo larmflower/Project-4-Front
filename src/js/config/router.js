@@ -13,8 +13,7 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
     })
     .state('about', {
       url: '/about',
-      templateUrl: 'js/views/static/about.html',
-      controller: 'VideoCtrl as videoctrl'
+      templateUrl: 'js/views/static/about.html'
     })
     .state('postsIndex', {
       url: '/posts',

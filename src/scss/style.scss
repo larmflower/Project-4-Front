@@ -1,5 +1,6 @@
 // Import all of your scss files here
 @import "bulma/sass/utilities/initial-variables";
+$primary: #4DD2E5;
 @import "bulma/bulma";
 
 
@@ -57,4 +58,13 @@ body {
     background-position: center;
     height: 610px;
   }
+}
+
+img {
+  box-shadow: 0px 3px 10px #7fc1b2;
+  }
+
+.box {
+  box-shadow: 0px 3px 10px #7fc1b2;
+
 }

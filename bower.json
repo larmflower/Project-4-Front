@@ -19,8 +19,10 @@
     "angular-messages": "^1.6.5",
     "angular-ui-router": "^1.0.5",
     "angular-resource": "^1.6.5",
-    "satellizer": "^0.15.5",
-    "angular-animate": "^1.6.5",
-    "ngvideo": "^1.0.3"
-  }
+    "satellizer": "^0.15.5"
+  },
+  "resolutions": {
+    "angular": "^1.5.8",
+    "satellizer": "^0.15.5"
+    }
 }

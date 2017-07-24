@@ -1,11 +1,10 @@
 angular
-  .module('finalProject')
-  .controller('MainCtrl', MainCtrl);
+.module('finalProject')
+.controller('MainCtrl', MainCtrl);
 
 MainCtrl.$inject = ['$auth', '$state', '$rootScope', '$scope', '$transitions'];
 function MainCtrl($auth, $state, $rootScope, $scope, $transitions) {
   const vm = this;
-
 
   vm.isAuthenticated = $auth.isAuthenticated;
 
@@ -32,5 +31,4 @@ function MainCtrl($auth, $state, $rootScope, $scope, $transitions) {
     $auth.logout();
     $state.go('home');
   }
-
 }
