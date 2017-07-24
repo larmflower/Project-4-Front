@@ -2,10 +2,10 @@ angular
 .module('finalProject')
 .controller('MainCtrl', MainCtrl);
 
-MainCtrl.$inject = ['$auth', '$state', 'newsService', 'filterFilter', '$scope']; //>>>>>>>???? filterFilter
-function MainCtrl($auth, $state, newsService, filterFilter, $scope) {
-MainCtrl.$inject = ['$auth', '$state', '$rootScope', '$scope', '$transitions'];
-function MainCtrl($auth, $state, $rootScope, $scope, $transitions) {
+// MainCtrl.$inject = ['$auth', '$state', 'newsService', 'filterFilter', '$scope']; //>>>>>>>???? filterFilter
+// function MainCtrl($auth, $state, newsService, filterFilter, $scope) {
+MainCtrl.$inject = ['$auth', '$state', '$rootScope', '$scope', '$transitions', 'filterFilter', 'newsService'];
+function MainCtrl($auth, $state, $rootScope, $scope, $transitions, filterFilter, newsService) {
   const vm = this;
   // vm.all = Main.query(); //>>?????? service.query?
 
@@ -58,5 +58,4 @@ function MainCtrl($auth, $state, $rootScope, $scope, $transitions) {
     () => vm.q
   ], filterArticles);
 
-}
 }
