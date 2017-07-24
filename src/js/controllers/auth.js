@@ -31,7 +31,13 @@ function LoginCtrl($auth, $state) {
 
   function authenticate(provider) {
     $auth.authenticate(provider)
-    .then(() => $state.go('postsIndex'));
+    .then((user) => {
+      if (!user.data.user.username || !user.data.user.email || !user.data.user.image) {
+        $state.go('usersShow', {id: user.data.user.id });
+      } else {
+        $state.go('usersShow');
+      }
+    });
   }
   vm.authenticate = authenticate;
 }

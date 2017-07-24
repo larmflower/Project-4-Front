@@ -27,7 +27,7 @@ body {
       display: inline-block;
     }
   }
-  
+
   .home {
     background-image: url('../images/homepage.jpg');
     background-size: cover;
@@ -51,21 +51,10 @@ body {
     padding: 10px auto;
   }
 
-  .video {
-    background-image: url('../images/about.png');
+  .about {
+    // background-image: url('../images/about.png');
     background-size: cover;
     background-position: center;
     height: 610px;
   }
 }
-
-
-
-// video {
-//   position: absolute; // Play the video in full screen mode
-//   top: 0px;
-//   left: 0px;
-//   min-width: 100%;
-//   min-height: 100%;
-//   z-index: -1; // Put the video behind all other elements
-// }

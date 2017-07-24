@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<section class="section">
+  <div class="columns">
+    <div class="column is-half is-offset-one-quarter">
+      <form ng-submit="usersEdit.update()" name="usersEdit.userForm" novalidate>
+
+        <div class="field">
+          <p class="control">
+            <label class="label" for="first_name">First Name</label>
+          </p>
+          <input type="text" class="input" id="first_name" name="first_name" ng-model="usersEdit.user.first_name">
+        </div>
+
+        <div class="field">
+          <p class="control">
+            <label class="label" for="last_name">Last Name</label>
+          </p>
+          <input type="text" class="input" id="last_name" name="last_name" ng-model="usersEdit.user.last_name">
+        </div>
+
+        <div class="field">
+          <p class="control">
+            <label class="label" for="username">Username</label>
+          </p>
+          <input type="text" class="input" id="username" name="username" ng-model="usersEdit.user.username" required>
+        </div>
+
+
+        <div class="field">
+          <p class="control">
+          <label for="image">Image</label>
+          </p>
+          <input type="file" base64 name="image" id="image" ng-model="usersEdit.user.base64" class="form-control">
+        </div>
+
+        <div class="field">
+          <p class="control">
+            <input type="submit" class="button is-primary is-fullwidth" value="Update">
+          </p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

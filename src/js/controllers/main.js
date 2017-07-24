@@ -24,6 +24,8 @@ function MainCtrl($auth, $state, $rootScope, $scope, $transitions) {
     vm.pageName = transition.$to().name;
     if(vm.stateHasChanged) vm.message = null;
     if(!vm.stateHasChanged) vm.stateHasChanged = true;
+    if($auth.getPayload()) vm.currentUser = $auth.getPayload();
+    $scope.navIsOpen = false;
   });
 
   function logout() {
