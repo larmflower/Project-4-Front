@@ -2,15 +2,26 @@
 
 <section class="section">
   <div class="columns is-multiline">
-    <div ng-repeat="user in usersIndex.all" class="column is-half">
+  </div>
+  <div>
+    <h5>Search by username</h5>
+    <input type="text" class="search" ng-model="usersIndex.q" placeholder="Look for friends!">
+  </div>
+</section>
+
+<section class="section">
+  <div class="columns is-multiline">
+    <div ng-repeat="user in usersIndex.filtered" class="column is-half" ng-if="user.id !== main.currentUser.id">
       <img ng-src="{{ user.image }}">
       <h2>Username: {{ user.username }}</h2>
       <h2>{{ user.full_name }}</h2>
       <h2><strong>Friends:</strong></h2>
       <div ng-repeat="friend in user.friends">
         <h4>{{ friend.username }}</h4>
-        <button class="button is-small" ng-click="">Delete</button>
       </div>
+      <p ng-if="usersIndex.isFriend(user)" class="button is-small is-primary friend">You are Friends!</p>
+      <p ng-if="usersIndex.requested(user)" class="button is-small is-primary friend">Requested!</p>
+      <a ng-click="usersIndex.requestFriend(user)" ng-if="!usersIndex.isFriend(user) && !usersIndex.requested(user)" class="button is-small is-primary">Add Friend</a>
     </div>
   </div>
 </section>
