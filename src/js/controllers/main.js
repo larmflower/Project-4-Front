@@ -54,7 +54,4 @@ function MainCtrl($auth, $state, $rootScope, $scope, $transitions) {
   // $scope.$watchGroup([ //><>>>>??? scope
   //   () => vm.q
   // ], filterArticles);
-
-=======
->>>>>>> development
 }
