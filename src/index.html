@@ -17,7 +17,7 @@
 
   <nav class="nav">
       <div class="nav-left">
-        <a class="nav-item logo" ui-sref="home">
+        <a class="nav-item logo" ui-sref="static">
           <h1 class="hvr-float-shadow">Make News</h1>
         </a>
       </div>
@@ -30,9 +30,10 @@
 
       <div class="nav-right nav-menu" ng-class="{ 'is-active': menuIsOpen }">
         <ul>
+          <li ng-if="main.isAuthenticated()"><a class="nav-item" ui-sref="home">News</a></li>
           <li ng-if="!main.isAuthenticated()"><a class="nav-item" ui-sref="about">About</a></li>
           <li ng-if="main.isAuthenticated()"><a class="nav-item" ui-sref="postsIndex">Posts</a></li>
-          <li ng-if="main.isAuthenticated()"><a class="nav-item" ui-sref="postsNew">New Post</a></li>
+          <li ng-if="main.isAuthenticated()"><a class="nav-item" ui-sref="postsNew">MAKE NEWS!</a></li>
           <li ng-if="main.isAuthenticated()"><a class="nav-item" ui-sref="usersIndex">Users</a></li>
           <li ng-if="!main.isAuthenticated()"><a class="nav-item" ui-sref="login">Login</a></li>
           <li ng-if="!main.isAuthenticated()"><a class="nav-item" ui-sref="register">Register</a></li>
@@ -46,48 +47,51 @@
 
 
     <!-- <h1>View Articles Below:</h1> -->
-<input type="text" class="search" ng-model="main.q">
+<!-- <input type="text" class="search" ng-model="main.q"> -->
 
-    <div class="box" ng-repeat="article in main.filtered">
-      <article class="media">
-        <div class="media-left">
-          <figure class="image is-128x128">
-            <img src="{{article.urlToImage}}" alt="image">
-          </figure>
+<!-- <div class="">
+  <div class="box" ng-repeat="article in main.filtered">
+    <article class="media">
+      <div class="media-left">
+        <figure class="image is-128x128">
+          <img src="{{article.urlToImage}}" alt="image">
+        </figure>
+      </div>
+      <div class="media-content">
+        <div class="content">
+          <p><strong>{{ article.title }}</strong> <a href="{{ article.url }}"><small>{{ article.url }}</small></a> <small>{{ article.author }}</small><br>
+            {{ article.description }}
+          </p>
         </div>
-        <div class="media-content">
-          <div class="content">
-            <p><strong>{{ article.title }}</strong> <a href="{{ article.url }}"><small>{{ article.url }}</small></a> <small>{{ article.author }}</small><br>
-              {{ article.description }}
-            </p>
+        <nav class="level is-mobile">
+          <div class="level-left">
+            <a class="level-item">
+              <span class="icon is-small"><i class="fa fa-reply"></i></span>
+            </a>
+            <a class="level-item"><span class="icon is-small"><i class="fa fa-retweet"></i></span>
+            </a>
+            <a class="level-item"><span class="icon is-small"><i class="fa fa-heart"></i></span>
+            </a>
           </div>
-          <nav class="level is-mobile">
-            <div class="level-left">
-              <a class="level-item">
-                <span class="icon is-small"><i class="fa fa-reply"></i></span>
-              </a>
-              <a class="level-item"><span class="icon is-small"><i class="fa fa-retweet"></i></span>
-              </a>
-              <a class="level-item"><span class="icon is-small"><i class="fa fa-heart"></i></span>
-              </a>
-            </div>
-          </nav>
-        </div>
-      </article>
-    </div>
+        </nav>
+      </div>
+    </article>
+  </div>
+</div> -->
 
 
-    <div class="button is-primary" ng-click="main.getArticle('bbc-news')">BBC </div>
+
+    <!-- <div class="button is-primary" ng-click="main.getArticle('bbc-news')">BBC </div>
     <div class="button is-primary" ng-click="main.getArticle('buzzfeed')">Buzzfeed</div>
     <div class="button is-primary" ng-click="main.getArticle('daily-mail')">Daily Mail NEWS</div>
     <div class="button is-primary" ng-click="main.getArticle('financial-times')">Financial Times</div>
     <div class="button is-primary" ng-click="main.getArticle('espn')">E S P N</div>
-    <div class="button is-primary" ng-click="main.getArticle('techcrunch')">Tech Crunch</div>
+    <div class="button is-primary" ng-click="main.getArticle('techcrunch')">Tech Crunch</div> -->
 
 
 
 
-    <div class="notification" ng-if="main.message">{{ main.message }}</div>
+    <!-- <div class="notification" ng-if="main.message">{{ main.message }}</div> -->
 
     <main ui-view class="container"></main>
 

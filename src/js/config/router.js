@@ -7,9 +7,14 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
   $locationProvider.html5Mode(true);
 
   $stateProvider
-    .state('home', {
+    .state('static', {
       url: '/',
-      templateUrl: 'js/views/static/home.html'
+      templateUrl: 'js/views/static/static.html'
+    })
+    .state('home', {
+      url: '/home',
+      templateUrl: 'js/views/static/home.html',
+      controller: 'HomeCtrl as homectrl'
     })
     .state('about', {
       url: '/about',

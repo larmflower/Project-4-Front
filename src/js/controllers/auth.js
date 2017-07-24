@@ -24,7 +24,7 @@ function LoginCtrl($auth, $state) {
 
   function submit() {
     $auth.login(vm.credentials)
-      .then(() => $state.go('postsIndex'));
+      .then(() => $state.go('home'));
   }
 
   vm.submit = submit;

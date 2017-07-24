@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<div>
+
+<div class="field">
+  <div class="control">
+    <input type="text" class="input is-primary" ng-model="homectrl.q" placeholder="Filter articles by description..">
+  </div>
+</div>
+
+
+  <div class="box" ng-repeat="article in homectrl.filtered">
+    <article class="media">
+      <div class="media-left">
+        <figure class="image is-128x128">
+          <img src="{{article.urlToImage}}" alt="image">
+        </figure>
+      </div>
+      <div class="media-content">
+        <div class="content">
+          <p><strong>{{ article.title }}</strong> <a href="{{ article.url }}"><small>{{ article.url }}</small></a> <small>{{ article.author }}</small><br>
+            {{ article.description }}
+          </p>
+        </div>
+        <nav class="level is-mobile">
+          <div class="level-left">
+            <a class="level-item">
+              <span class="icon is-small"><i class="fa fa-reply"></i></span>
+            </a>
+            <a class="level-item"><span class="icon is-small"><i class="fa fa-retweet"></i></span>
+            </a>
+            <a class="level-item"><span class="icon is-small"><i class="fa fa-heart"></i></span>
+            </a>
+          </div>
+        </nav>
+      </div>
+    </article>
+  </div>
+</div>
+
+<div class="button is-primary" ng-click="homectrl.getArticle('bbc-news')">BBC </div>
+<div class="button is-primary" ng-click="homectrl.getArticle('buzzfeed')">Buzzfeed</div>
+<div class="button is-primary" ng-click="homectrl.getArticle('daily-mail')">Daily Mail</div>
+<div class="button is-primary" ng-click="homectrl.getArticle('financial-times')">Financial Times</div>
+<div class="button is-primary" ng-click="homectrl.getArticle('espn')">E S P N</div>
+<div class="button is-primary" ng-click="homectrl.getArticle('techcrunch')">Tech Crunch</div>
