@@ -11,10 +11,20 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
       url: '/',
       templateUrl: 'js/views/static/home.html'
     })
+    .state('about', {
+      url: '/about',
+      templateUrl: 'js/views/static/about.html',
+      controller: 'VideoCtrl as videoctrl'
+    })
     .state('postsIndex', {
       url: '/posts',
       templateUrl: 'js/views/posts/index.html',
       controller: 'PostsIndexCtrl as postsIndex'
+    })
+    .state('postsNew', {
+      url: '/posts',
+      templateUrl: 'js/views/posts/new.html',
+      controller: 'PostsNewCtrl as postsNew'
     })
     .state('usersIndex', {
       url: '/users',

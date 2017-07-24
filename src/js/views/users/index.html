@@ -4,9 +4,10 @@
   <div class="columns is-multiline">
     <div ng-repeat="user in usersIndex.all" class="column is-half">
       <h2>{{ user.username }}</h2>
-      <h2>{{ user.first_name }}</h2>
-      <h2>{{ user.last_name }}</h2>
-      <h2><strong>Friends:</strong>{{ user.friends }}</h2>
+      <img ng-src="{{ user.image.url }}">
+      <h2>{{ user.full_name }}</h2>
+      <h2><strong>Friends:</strong></h2>
+      <!-- <h4>{{ user.friends }}</h4> -->
       <br>
     </div>
   </div>

@@ -29,15 +29,9 @@ function LoginCtrl($auth, $state) {
 
   vm.submit = submit;
 
-  // function authenticate(provider) {
-  //   $auth.authenticate(provider)
-  //    .then((user) => {
-  //      if (!user.data.user.full_name || !user.data.user.username || !user.data.user.email || !user.data.user.image_src) {
-  //        $state.go('usersIndex', {id: user.data.user.id });
-  //      } else {
-  //        $state.go('postsIndex');
-  //      }
-  //    });
-  // }
-  // vm.authenticate = authenticate;
+  function authenticate(provider) {
+    $auth.authenticate(provider)
+    .then(() => $state.go('postsIndex'));
+  }
+  vm.authenticate = authenticate;
 }
