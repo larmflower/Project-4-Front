@@ -3,12 +3,13 @@
 <section class="section">
   <div class="columns is-multiline">
     <div ng-repeat="user in usersIndex.all" class="column is-half">
-      <h2>{{ user.username }}</h2>
-      <img ng-src="{{ user.image.url }}">
+      <img ng-src="{{ user.image }}">
+      <h2>Username: {{ user.username }}</h2>
       <h2>{{ user.full_name }}</h2>
       <h2><strong>Friends:</strong></h2>
-      <!-- <h4>{{ user.friends }}</h4> -->
-      <br>
+      <div ng-repeat="friend in user.friends">
+        <h4>{{ friend.username }}</h4>
+      </div>
     </div>
   </div>
 </section>
