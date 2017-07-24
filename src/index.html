@@ -1,46 +1,88 @@
 <!DOCTYPE html>
 <html ng-app="finalProject">
-  <head>
-    <base href="/">
-    <meta charset="utf-8">
-    <title>Make News</title>
-    <link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
-    <!-- inject:js -->
-    <!-- endinject -->
-    <!-- inject:css -->
-    <!-- endinject -->
-  </head>
-  <body>
+<head>
+  <base href="/">
+  <meta charset="utf-8">
+  <title>Make News</title>
+  <link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- inject:js -->
+  <!-- endinject -->
+  <!-- inject:css -->
+  <!-- endinject -->
+</head>
+<body ng-controller="MainCtrl as main">
 
   <nav class="nav">
-      <div class="nav-left">
-        <a class="nav-item logo" ui-sref="home">
-          <h1>Make News</h1>
-        </a>
-      </div>
+    <div class="nav-left">
+      <a class="nav-item logo" ui-sref="home">
+        <h1>Make News</h1>
+      </a>
+    </div>
 
-      <span class="nav-toggle" ng-click="menuIsOpen = !menuIsOpen">
-        <span></span>
-        <span></span>
-        <span></span>
-      </span>
+    <span class="nav-toggle" ng-click="menuIsOpen = !menuIsOpen">
+      <span></span>
+      <span></span>
+      <span></span>
+    </span>
 
-      <div class="nav-right nav-menu" ng-class="{ 'is-active': menuIsOpen }">
-        <ul>
-          <li><a class="nav-item" ui-sref="postsIndex">Posts</a></li>
-          <li><a class="nav-item" ui-sref="usersIndex">Users</a></li>
-          <li ng-if="!main.isAuthenticated()"><a class="nav-item" ui-sref="login">Login</a></li>
-          <li ng-if="!main.isAuthenticated()"><a class="nav-item" ui-sref="register">Register</a></li>
-          <li ng-if="main.isAuthenticated()"><a class="nav-item" ng-click="main.logout()">Logout</a></li>
-        </ul>
-      </div>
+
+    <div class="nav-right nav-menu" ng-class="{ 'is-active': menuIsOpen }">
+      <ul>
+        <li><a class="nav-item" ui-sref="postsIndex">Posts</a></li>
+        <li><a class="nav-item" ui-sref="usersIndex">Users</a></li>
+        <li ng-if="!main.isAuthenticated()"><a class="nav-item" ui-sref="login">Login</a></li>
+        <li ng-if="!main.isAuthenticated()"><a class="nav-item" ui-sref="register">Register</a></li>
+        <li ng-if="main.isAuthenticated()"><a class="nav-item" ng-click="main.logout()">Logout</a></li>
+      </ul>
+    </div>
   </nav>
 
-  <main ng-controller="MainCtrl as main">
+  <main>
     <div class="notification" ng-if="main.message">{{ main.message }}</div>
 
-    <main ui-view class="container"></main>
+
+    <!-- <h1>View Articles Below:</h1> -->
+<input type="text" class="search" ng-model="main.q">
+
+    <div class="box" ng-repeat="article in main.filtered">
+      <article class="media">
+        <div class="media-left">
+          <figure class="image is-128x128">
+            <img src="{{article.urlToImage}}" alt="image">
+          </figure>
+        </div>
+        <div class="media-content">
+          <div class="content">
+            <p><strong>{{ article.title }}</strong> <a href="{{ article.url }}"><small>{{ article.url }}</small></a> <small>{{ article.author }}</small><br>
+              {{ article.description }}
+            </p>
+          </div>
+          <nav class="level is-mobile">
+            <div class="level-left">
+              <a class="level-item">
+                <span class="icon is-small"><i class="fa fa-reply"></i></span>
+              </a>
+              <a class="level-item"><span class="icon is-small"><i class="fa fa-retweet"></i></span>
+              </a>
+              <a class="level-item"><span class="icon is-small"><i class="fa fa-heart"></i></span>
+              </a>
+            </div>
+          </nav>
+        </div>
+      </article>
+    </div>
+
+
+    <div class="button is-primary" ng-click="main.getArticle('bbc-news')">BBC </div>
+    <div class="button is-primary" ng-click="main.getArticle('buzzfeed')">Buzzfeed</div>
+    <div class="button is-primary" ng-click="main.getArticle('daily-mail')">Daily Mail NEWS</div>
+    <div class="button is-primary" ng-click="main.getArticle('financial-times')">Financial Times</div>
+    <div class="button is-primary" ng-click="main.getArticle('espn')">E S P N</div>
+    <div class="button is-primary" ng-click="main.getArticle('techcrunch')">Tech Crunch</div>
+
+
   </main>
 
-  </body>
+</body>
 </html>
