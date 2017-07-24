@@ -7,10 +7,6 @@ MainCtrl.$inject = ['$auth', '$state', '$rootScope', '$scope', '$transitions'];
 function MainCtrl($auth, $state, $rootScope, $scope, $transitions) {
   const vm = this;
 
-  // function filterArticles(){ //>>>>>????? this function
-  //   const params = { description: vm.q };
-  //   vm.filtered = filterFilter(vm.articles, params);
-  // }
 
   vm.isAuthenticated = $auth.isAuthenticated;
 
@@ -29,6 +25,8 @@ function MainCtrl($auth, $state, $rootScope, $scope, $transitions) {
     vm.pageName = transition.$to().name;
     if(vm.stateHasChanged) vm.message = null;
     if(!vm.stateHasChanged) vm.stateHasChanged = true;
+    if($auth.getPayload()) vm.currentUser = $auth.getPayload();
+    $scope.navIsOpen = false;
   });
 
   function logout() {
@@ -36,7 +34,8 @@ function MainCtrl($auth, $state, $rootScope, $scope, $transitions) {
     $state.go('home');
   }
 
-  vm.articles = [];
+
+  // vm.articles = [];
 
   // function getArticle(get) { //this function knows nothing jon snow, it's a shoe down a well
 
@@ -56,4 +55,6 @@ function MainCtrl($auth, $state, $rootScope, $scope, $transitions) {
   //   () => vm.q
   // ], filterArticles);
 
+=======
+>>>>>>> development
 }

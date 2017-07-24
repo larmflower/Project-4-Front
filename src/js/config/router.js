@@ -18,8 +18,7 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
     })
     .state('about', {
       url: '/about',
-      templateUrl: 'js/views/static/about.html',
-      controller: 'VideoCtrl as videoctrl'
+      templateUrl: 'js/views/static/about.html'
     })
     .state('postsIndex', {
       url: '/posts',
@@ -35,6 +34,16 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
       url: '/users',
       templateUrl: 'js/views/users/index.html',
       controller: 'UsersIndexCtrl as usersIndex'
+    })
+    .state('usersShow', {
+      url: '/profile',
+      templateUrl: 'js/views/users/profile.html',
+      controller: 'UsersShowCtrl as usersShow'
+    })
+    .state('usersEdit', {
+      url: '/profile',
+      templateUrl: 'js/views/users/edit.html',
+      controller: 'UsersEditCtrl as usersEdit'
     })
     .state('login', {
       url: '/login',
