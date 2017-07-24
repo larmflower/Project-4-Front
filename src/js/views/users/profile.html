@@ -18,7 +18,7 @@
     <div>
       <div ng-repeat="friend in usersShow.user.friends">
         <h4>{{ friend.username }}</h4>
-        <img ng-src="{{ friend.image.url }}">
+        <img ng-src="{{ friend.image.url }}"><br>
         <a type="button" ng-click="usersShow.removed(friend)" class="button">Unfriend</a>
       </div>
     </div>

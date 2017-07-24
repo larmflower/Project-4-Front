@@ -7,7 +7,7 @@
   </div>
 </div>
 
-
+<div>
   <div class="box" ng-repeat="article in homectrl.filtered">
     <article class="media">
       <div class="media-left">
@@ -17,7 +17,7 @@
       </div>
       <div class="media-content">
         <div class="content">
-          <p><strong>{{ article.title }}</strong> <a href="{{ article.url }}"><small>{{ article.url }}</small></a> <small>{{ article.author }}</small><br>
+          <p><strong>{{ article.title }}</strong> <a href="{{ article.url }}" target="_blank"><small>{{ article.url }}</small></a> <small>{{ article.author }}</small><br>
             {{ article.description }}
           </p>
         </div>
