@@ -9,9 +9,7 @@ function UsersIndexCtrl(User, $scope, filterFilter, $auth) {
   const vm = this;
 
   vm.all = User.query();
-
   vm.currentUser = User.get({ id: $auth.getPayload().id });
-
 
   function requestFriend(user) {
     User
@@ -147,7 +145,7 @@ function UsersEditCtrl(User, $auth, $state) {
   function usersUpdate() {
     vm.user
     .$update()
-    .then(() => $state.go('usersIndex'));
+    .then(() => $state.go('usersShow'));
   }
 
   vm.update = usersUpdate;

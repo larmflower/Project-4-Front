@@ -3,13 +3,27 @@ angular
   .controller('PostsIndexCtrl', PostsIndexCtrl)
   .controller('PostsNewCtrl', PostsNewCtrl);
 
-PostsIndexCtrl.$inject = ['Post', 'User', '$state', 'Comment'];
-function PostsIndexCtrl(Post, User, $state, Comment) {
+PostsIndexCtrl.$inject = ['Post', 'User', '$state', 'Comment', '$auth'];
+function PostsIndexCtrl(Post, User, $state, Comment, $auth) {
   const vm = this;
 
   vm.all = Post.query();
   vm.user = User.query();
   vm.comments = Comment.query();
+
+  vm.user = User.get({ id: $auth.getPayload().id });
+
+  function isFriendsPost(post) {
+    let friendsExist = false;
+    vm.user.friends.forEach((friend) => {
+      if(post.user.id === friend.id || post.user.id === vm.user.id) {
+        friendsExist = true;
+      }
+    });
+    return friendsExist;
+  }
+  vm.isFriendsPost = isFriendsPost;
+
 
   function postsDelete(post) {
     Post
@@ -22,24 +36,24 @@ function PostsIndexCtrl(Post, User, $state, Comment) {
 
   vm.delete = postsDelete;
 
-  function Add() {
-    Comment
-    .save({ comment: vm.comment })
-    .$promise
-    .then((comment) => {
-      vm.post.comments.push(comment);
-      vm.comment = {};
-    });
-  }
-  vm.add = Add;
+  // function Add(comment, post) {
+  //   comment.post_id = post.id;
+  //   Comment
+  //   .save({ comment: comment })
+  //   .$promise
+  //   .then((comment) => {
+  //     post.comments.push(comment);
+  //     comment = {};
+  //   });
+  // }
+  // vm.add = Add;
 
   function Delete(comment) {
     Comment
       .delete({ id: comment.id })
       .$promise
       .then(() => {
-        const index = vm.post.comments.indexOf(comment);
-        vm.post.comments.splice(index, 1);
+        $state.go('postsIndex');
       });
   }
   vm.deleteComment = Delete;

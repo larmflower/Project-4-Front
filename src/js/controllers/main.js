@@ -34,5 +34,4 @@ function MainCtrl($auth, $state, $rootScope, $scope, $transitions) {
     $state.go('login');
   }
 
-
 }
