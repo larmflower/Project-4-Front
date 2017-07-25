@@ -27,10 +27,16 @@ function PostsIndexCtrl(Post, User, $state) {
 }
 
 
-PostsNewCtrl.$inject = ['Post', 'User', '$state'];
-function PostsNewCtrl(Post, User, $state) {
+PostsNewCtrl.$inject = ['Post', 'User', '$state', '$rootScope'];
+function PostsNewCtrl(Post, User, $state, $rootScope) {
   const vm = this;
+
+  vm.article = $rootScope.currentArticle;
   vm.post = {};
+
+  if(vm.article) vm.post.src = vm.article.url;
+
+  $rootScope.currentArticle = null;
 
   vm.create = postsCreate;
 
@@ -40,8 +46,8 @@ function PostsNewCtrl(Post, User, $state) {
       .save(vm.post)
       .$promise
       .then(() => {
-        console.log('then block?');
         $state.go('postsIndex');
       });
   }
+
 }

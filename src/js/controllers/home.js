@@ -2,8 +2,8 @@ angular
 .module('finalProject')
 .controller('HomeCtrl', HomeCtrl);
 
-HomeCtrl.$inject = ['$auth', '$scope', 'filterFilter', 'newsService'];
-function HomeCtrl($auth, $scope, filterFilter, newsService) {
+HomeCtrl.$inject = ['$auth', '$scope', 'filterFilter', 'newsService', '$rootScope', '$state'];
+function HomeCtrl($auth, $scope, filterFilter, newsService, $rootScope, $state) {
   const vm = this;
 
   function filterArticles(){ //>>>>>????? this function
@@ -22,11 +22,21 @@ function HomeCtrl($auth, $scope, filterFilter, newsService) {
     });// object
     // vm.articles = newsService.getNews(get);
 
+
   }
 
   vm.getArticle = getArticle;
 
+  function retweet(article) {
+    $rootScope.currentArticle = article;
+    $state.go('postsNew');
+  }
+
+  vm.retweet = retweet;
+
   $scope.$watchGroup([ //><>>>>??? scope
     () => vm.q
   ], filterArticles);
+
+
 }

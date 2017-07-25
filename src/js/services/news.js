@@ -16,5 +16,7 @@ function NewsService($http, API_URL) {
       });
   }
 
+
+
   vm.getNews = getNews;
 }

@@ -55,6 +55,5 @@ function MainCtrl($auth, $state, $rootScope, $scope, $transitions) {
   //   () => vm.q
   // ], filterArticles);
 
-=======
->>>>>>> development
+
 }

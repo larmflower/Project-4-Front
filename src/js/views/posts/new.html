@@ -5,6 +5,8 @@
     <div class="column is-half is-offset-one-quarter">
       <form ng-submit="postsNew.create()" name="postsNew.postForm" novalidate>
 
+        <p ng-if="postsNew.article">You are currently posting on: {{ postsNew.article.title }}</p>
+
         <div class="field">
           <p class="control">
             <label class="label" for="headline">Headline</label>
@@ -12,7 +14,7 @@
           <input type="text" class="input" id="headline" name="headline" ng-model="postsNew.post.headline">
         </div>
 
-        <div class="field">
+        <div class="field" ng-if="!postsNew.article">
           <p class="control">
             <label class="label" for="src">Source</label>
           </p>

@@ -26,7 +26,7 @@
             <a class="level-item">
               <span class="icon is-small"><i class="fa fa-reply"></i></span>
             </a>
-            <a class="level-item"><span class="icon is-small"><i class="fa fa-retweet"></i></span>
+            <a ng-click="homectrl.retweet(article)" class="level-item"><span class="icon is-small"><i class="fa fa-retweet"></i></span>
             </a>
             <a class="level-item"><span class="icon is-small"><i class="fa fa-heart"></i></span>
             </a>
@@ -35,11 +35,18 @@
       </div>
     </article>
   </div>
-</div>
 
 <div class="button is-primary" ng-click="homectrl.getArticle('bbc-news')">BBC </div>
 <div class="button is-primary" ng-click="homectrl.getArticle('buzzfeed')">Buzzfeed</div>
-<div class="button is-primary" ng-click="homectrl.getArticle('daily-mail')">Daily Mail</div>
+<div class="button is-primary" ng-click="homectrl.getArticle('daily-mail')">Daily Mail UK</div>
 <div class="button is-primary" ng-click="homectrl.getArticle('financial-times')">Financial Times</div>
 <div class="button is-primary" ng-click="homectrl.getArticle('espn')">E S P N</div>
 <div class="button is-primary" ng-click="homectrl.getArticle('techcrunch')">Tech Crunch</div>
+<div class="button is-primary" ng-click="homectrl.getArticle('the-new-york-times')">The New York Times</div>
+<div class="button is-primary" ng-click="homectrl.getArticle('the-times-of-india')">The Times of India</div>
+<div class="button is-primary" ng-click="homectrl.getArticle('die-zeit')">Die Zeit Weekly</div>
+<div class="button is-primary" ng-click="homectrl.getArticle('engadget')">Engadget UK</div>
+<div class="button is-primary" ng-click="homectrl.getArticle('hacker-news')">Hacker News</div>
+<div class="button is-primary" ng-click="homectrl.getArticle('new-scientist')">New Scientist Europe</div>
+<div class="button is-primary" ng-click="homectrl.getArticle('the-verge')">The Verge Tech</div>
+<div class="button is-primary" ng-click="homectrl.getArticle('reddit-r-all')">Reddit</div>

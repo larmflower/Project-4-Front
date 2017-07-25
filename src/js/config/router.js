@@ -26,7 +26,7 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
       controller: 'PostsIndexCtrl as postsIndex'
     })
     .state('postsNew', {
-      url: '/posts',
+      url: '/posts/new',
       templateUrl: 'js/views/posts/new.html',
       controller: 'PostsNewCtrl as postsNew'
     })
