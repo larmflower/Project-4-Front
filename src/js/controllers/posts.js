@@ -36,11 +36,15 @@ function PostsNewCtrl(Post, User, $state, $rootScope) {
 
   if(vm.article) vm.post.src = vm.article.url;
 
+  if(vm.article) vm.post.remote_image_url = vm.article.urlToImage;
+
+
   $rootScope.currentArticle = null;
 
   vm.create = postsCreate;
 
   function postsCreate() {
+    console.log(vm.post);
 
     Post
       .save(vm.post)
