@@ -20,7 +20,8 @@
     "angular-ui-router": "^1.0.5",
     "angular-resource": "^1.6.5",
     "satellizer": "^0.15.5",
-    "mh-dragdrop-image": "*"
+    "mh-dragdrop-image": "*",
+    "angular-animate": "^1.6.5"
   },
   "resolutions": {
     "angular": "^1.5.8",
