@@ -53,7 +53,7 @@ function PostsIndexCtrl(Post, User, $state, Comment, $auth) {
       .delete({ id: comment.id })
       .$promise
       .then(() => {
-        $state.go('postsIndex');
+        $state.reload();
       });
   }
   vm.deleteComment = Delete;
