@@ -1,8 +1,39 @@
 <!DOCTYPE html>
 
-<img src="{{ usersShow.user.image }}">
-<h1>{{ usersShow.user.full_name }}</h1>
-<h1>{{ usersShow.user.username }}</h1>
-<h1>{{ usersShow.user.email }}</h1>
-<button class="button is-small is-primary" ui-sref="usersEdit({ id: usersShow.user.id })">Edit</button>
-<button class="button is-small is-danger" ng-click="usersShow.delete()">Delete</button>
+<section class="section">
+<div>
+
+<div class="column">
+  <img src="{{ usersShow.user.image }}">
+  <h1>{{ usersShow.user.full_name }}</h1>
+  <h1>{{ usersShow.user.username }}</h1>
+  <h1>{{ usersShow.user.email }}</h1>
+  <button class="button is-small is-primary" ui-sref="usersEdit({ id: usersShow.user.id })">Edit</button>
+  <button class="button is-small is-danger" ng-click="usersShow.delete()">Delete</button>
+</div>
+
+<div>
+  <h2>My Amigos</h2>
+  <h4 ng-if="usersShow.user.friends.length === 0">You currently have no friends</h4>
+    <div>
+      <div ng-repeat="friend in usersShow.user.friends">
+        <h4>{{ friend.username }}</h4>
+        <img ng-src="{{ friend.image.url }}"><br>
+        <a type="button" ng-click="usersShow.removed(friend)" class="button">Unfriend</a>
+      </div>
+    </div>
+
+  <h2>Son Amigos?</h2>
+  <h4 ng-if="usersShow.pending.length === 0">You currently have no pending friend requests</h4>
+  <div>
+      <div ng-repeat="pending in usersShow.pending">
+        <h4>{{ pending.username }}</h4>
+        <img ng-src="{{pending.image}}" class="user_image">
+        <button ng-click="usersShow.accepted(pending)" class="button">Accept Friend Request</button>
+        <button ng-click="usersShow.declined(pending)" class="button">Decline Friend Request</button>
+      </div>
+  </div>
+</div>
+
+</div>
+</section>

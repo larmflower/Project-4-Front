@@ -31,29 +31,8 @@ function MainCtrl($auth, $state, $rootScope, $scope, $transitions) {
 
   function logout() {
     $auth.logout();
-    $state.go('home');
+    $state.go('login');
   }
-
-
-  // vm.articles = [];
-
-  // function getArticle(get) { //this function knows nothing jon snow, it's a shoe down a well
-
-    // newsService.getNews(get)
-    // .then((res)=>{
-    //   vm.articles = res.articles;
-    //   filterArticles();
-    //
-    // });// object
-    // vm.articles = newsService.getNews(get);
-
-  // }
-
-  // vm.getArticle = getArticle;
-
-  // $scope.$watchGroup([ //><>>>>??? scope
-  //   () => vm.q
-  // ], filterArticles);
 
 
 }
