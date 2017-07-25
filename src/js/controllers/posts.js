@@ -9,36 +9,40 @@ function PostsIndexCtrl(Post, User, $state, Comment) {
 
   vm.all = Post.query();
   vm.user = User.query();
-
-  console.log(vm.all);
-  // function requestedFriendships() {
-  //   User
-  //     .get({ id: $auth.getPayload().id })
-  //     .$promise
-  //     .then((response) => {
-  //       vm.pending = [];
-  //       vm.currentUser = response;
-  //       response.friendships.forEach((arr) => {
-  //         if (arr.status === 'requested') {
-  //           vm.pending.push(User.get({ id: arr.friend_id }));
-  //         }
-  //       });
-  //     });
-  // }
-
+  vm.comments = Comment.query();
 
   function postsDelete(post) {
     Post
       .delete({ id: post.id })
       .$promise
       .then(() => {
-        const index = vm.all.indexOf(post.id);
-        vm.all.splice(index, 1);
-        $state.go('postsIndex');
+        $state.reload();
       });
   }
 
   vm.delete = postsDelete;
+
+  function Add() {
+    Comment
+    .save({ comment: vm.comment })
+    .$promise
+    .then((comment) => {
+      vm.post.comments.push(comment);
+      vm.comment = {};
+    });
+  }
+  vm.add = Add;
+
+  function Delete(comment) {
+    Comment
+      .delete({ id: comment.id })
+      .$promise
+      .then(() => {
+        const index = vm.post.comments.indexOf(comment);
+        vm.post.comments.splice(index, 1);
+      });
+  }
+  vm.deleteComment = Delete;
 
 }
 
