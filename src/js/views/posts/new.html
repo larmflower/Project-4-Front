@@ -41,14 +41,14 @@
           <img src="{{postsNew.article.urlToImage}}" alt="image">
         </div>
 <!-- DRAG AND DROP IMAGE DIV GOES HERE -->
-        <!-- <div ng-if="postsNew.article">
-          <drag-drop-img ng-model="base64String"></drag-drop-img>
-        </div> -->
+        <div ng-if="!postsNew.article">
+          <drag-drop-img ng-model="postsNew.post.base64"></drag-drop-img>
+        </div>
 
-        <div class="form-group" ng-if="!postsNew.article">
+        <!-- <div class="form-group" ng-if="!postsNew.article">
           <label for="base64">Image</label>
           <input type="file" base64 name="base64" ng-model="postsNew.post.base64" id="base64" class="image">
-        </div>
+        </div> -->
 
         <div class="field">
           <p class="control">
