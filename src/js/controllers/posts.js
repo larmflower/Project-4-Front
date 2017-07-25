@@ -10,6 +10,22 @@ function PostsIndexCtrl(Post, User, $state) {
   vm.all = Post.query();
   vm.user = User.query();
 
+  console.log(vm.all);
+  // function requestedFriendships() {
+  //   User
+  //     .get({ id: $auth.getPayload().id })
+  //     .$promise
+  //     .then((response) => {
+  //       vm.pending = [];
+  //       vm.currentUser = response;
+  //       response.friendships.forEach((arr) => {
+  //         if (arr.status === 'requested') {
+  //           vm.pending.push(User.get({ id: arr.friend_id }));
+  //         }
+  //       });
+  //     });
+  // }
+
 
   function postsDelete(post) {
     Post

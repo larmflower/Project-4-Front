@@ -32,7 +32,8 @@ function LoginCtrl($auth, $state) {
   function authenticate(provider) {
     $auth.authenticate(provider)
     .then((user) => {
-      if (!user.data.user.username || !user.data.user.email || !user.data.user.image) {
+      console.log(user.data);
+      if (!user.data.user.username || !user.data.user.image) {
         $state.go('usersShow', {id: user.data.user.id });
       } else {
         $state.go('usersShow');
