@@ -1,14 +1,19 @@
 <!DOCTYPE html>
-
+<h2 class="centered">Newsfeed</h2>
 <div class="section">
+
   <div class="columns is-multiline">
+
     <div ng-repeat="post in postsIndex.all" class="column is-half is-offset-one-quarter box">
-      <h2>"{{ post.description }}"</h2>
+
+      <h4>"{{ post.description }}"</h4>
       <img ng-src="{{ post.image }}">
-      <h2>{{ post.headline }}</h2>
-      <h3>{{ post.src }}</h3>
-      <h2>{{ post.user.username }}</h2>
+      <h5>{{ post.headline }}</h5>
+      <p class="postSource">{{ post.src }}</p>
+      <h4>{{ post.user.username }}</h4>
       <button class="button is-small is-danger" ng-click="postsIndex.delete(post)" ng-if="main.isAuthenticated() && main.currentUser.id === post.user.id">Delete</button>
+
+
     </div>
   </div>
 </div>
