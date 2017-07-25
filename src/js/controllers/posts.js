@@ -13,16 +13,16 @@ function PostsIndexCtrl(Post, User, $state, Comment, $auth) {
 
   vm.user = User.get({ id: $auth.getPayload().id });
 
-  function isFriendsPost(post) {
-    let friendsExist = false;
-    vm.user.friends.forEach((friend) => {
-      if(post.user.id === friend.id || post.user.id === vm.user.id) {
-        friendsExist = true;
-      }
-    });
-    return friendsExist;
-  }
-  vm.isFriendsPost = isFriendsPost;
+  // function isFriendsPost(post) {
+  //   let friendsExist = false;
+  //   vm.user.friends.forEach((friend) => {
+  //     if(post.user.id === friend.id || post.user.id === vm.user.id) {
+  //       friendsExist = true;
+  //     }
+  //   });
+  //   return friendsExist;
+  // }
+  // vm.isFriendsPost = isFriendsPost;
 
 
   function postsDelete(post) {
@@ -36,17 +36,17 @@ function PostsIndexCtrl(Post, User, $state, Comment, $auth) {
 
   vm.delete = postsDelete;
 
-  function Add(comment) {
-    // vm.comment.post_id = vm.postid;
-    Comment
-    .save({ comment: vm.comment })
-    .$promise
-    .then((comment) => {
-      vm.post.comments.push(comment);
-      vm.comment = {};
-    });
-  }
-  vm.add = Add;
+  // function Add(comment) {
+  //   // vm.comment.post_id = vm.postid;
+  //   Comment
+  //   .save({ comment: vm.comment })
+  //   .$promise
+  //   .then((comment) => {
+  //     vm.post.comments.push(comment);
+  //     vm.comment = {};
+  //   });
+  // }
+  // vm.add = Add;
 
   function Delete(comment) {
     Comment
