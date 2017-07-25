@@ -70,7 +70,7 @@ function UsersShowCtrl(User, $auth, $state) {
       .$remove()
       .then(() => {
         $auth.logout();
-        $state.go('home');
+        $state.go('static');
       });
   }
 

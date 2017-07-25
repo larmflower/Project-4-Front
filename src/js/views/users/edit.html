@@ -23,7 +23,14 @@
           <p class="control">
             <label class="label" for="username">Username</label>
           </p>
-          <input type="text" class="input" id="username" name="username" ng-model="usersEdit.user.username" required>
+          <input type="text" class="input" id="username" name="username" ng-model="usersEdit.user.username">
+        </div>
+
+        <div class="field">
+          <p class="control">
+            <label class="label" for="email">Email</label>
+          </p>
+          <input type="email" class="input" id="email" name="email" ng-model="usersEdit.user.email">
         </div>
 
 
@@ -33,6 +40,8 @@
           </p>
           <input type="file" base64 name="image" id="image" ng-model="usersEdit.user.base64" class="form-control">
         </div>
+
+        <img ng-src="{{ usersEdit.user.base64 }}">
 
         <div class="field">
           <p class="control">
