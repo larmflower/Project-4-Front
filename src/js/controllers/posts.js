@@ -3,8 +3,8 @@ angular
   .controller('PostsIndexCtrl', PostsIndexCtrl)
   .controller('PostsNewCtrl', PostsNewCtrl);
 
-PostsIndexCtrl.$inject = ['Post', 'User', '$state'];
-function PostsIndexCtrl(Post, User, $state) {
+PostsIndexCtrl.$inject = ['Post', 'User', '$state', 'Comment'];
+function PostsIndexCtrl(Post, User, $state, Comment) {
   const vm = this;
 
   vm.all = Post.query();
