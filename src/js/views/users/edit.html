@@ -38,10 +38,8 @@
           <p class="control">
           <label for="image">Image</label>
           </p>
-          <input type="file" base64 name="image" id="image" ng-model="usersEdit.user.base64" class="form-control">
+          <drag-drop-img ng-model="usersEdit.user.base64" id="base64" class="image"></drag-drop-img>
         </div>
-
-        <img ng-src="{{ usersEdit.user.base64 }}">
 
         <div class="field">
           <p class="control">

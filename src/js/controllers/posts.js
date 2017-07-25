@@ -36,17 +36,17 @@ function PostsIndexCtrl(Post, User, $state, Comment, $auth) {
 
   vm.delete = postsDelete;
 
-  // function Add(comment, post) {
-  //   comment.post_id = post.id;
-  //   Comment
-  //   .save({ comment: comment })
-  //   .$promise
-  //   .then((comment) => {
-  //     post.comments.push(comment);
-  //     comment = {};
-  //   });
-  // }
-  // vm.add = Add;
+  function Add(comment) {
+    // vm.comment.post_id = vm.postid;
+    Comment
+    .save({ comment: vm.comment })
+    .$promise
+    .then((comment) => {
+      vm.post.comments.push(comment);
+      vm.comment = {};
+    });
+  }
+  vm.add = Add;
 
   function Delete(comment) {
     Comment

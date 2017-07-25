@@ -48,10 +48,10 @@
 
         <div class="form-group">
           <label for="base64">Image</label>
-          <input type="file" base64 name="base64" ng-model="register.user.base64" id="base64" class="image">
+            <drag-drop-img ng-model="register.user.base64" id="base64" class="image"></drag-drop-img>
         </div>
 
-        <img ng-src="{{ register.user.base64 }}">
+        <!-- <img ng-src="{{ register.user.base64 }}"> -->
 
         <div class="field">
           <p class="control">
