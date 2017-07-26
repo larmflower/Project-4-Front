@@ -30,6 +30,15 @@
               <button ng-click="postsIndex.deleteComment(comment)" ng-if="main.isAuthenticated() && main.currentUser.id === comment.user_id" class="button is-small is-danger is-outlined">Delete</button>
             </div>
           </div>
+
+          <div ng-if="main.isAuthenticated()">
+            <form ng-submit="postsIndex.addComment(post)">
+              <textarea class="comment" ng-model="postsIndex.newComment.body"></textarea>
+              <br><button class="button is-small is-primary">Add Comment</button>
+            </form>
+          </div>
+
+          <a ng-click="postsIndex.liked(post)" ng-if="main.isAuthenticated()" class="fa fa-thumbs-o-up fa-2x">Like</a><span> {{ post.posts_liked_ids.length }} </span>
         </div>
 
       </div>
