@@ -14,18 +14,6 @@ function PostsIndexCtrl(Post, User, $state, Comment, $auth) {
 
   vm.user = User.get({ id: $auth.getPayload().id });
 
-  function showPost(post, $index) {
-    let showPost = false;
-    post.user.id === vm.user.id ? showPost = true : vm.all.splice($index, 1);
-    vm.user.friends.forEach((friend) => {
-      post.user.id === friend.id ? showPost = true : vm.all.splice($index, 1);
-    });
-    return showPost;
-  }
-
-  vm.showPost = showPost;
-  console.log(vm.all);
-
   function postsDelete(post) {
     Post
       .delete({ id: post.id })

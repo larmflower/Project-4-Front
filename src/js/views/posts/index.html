@@ -8,10 +8,6 @@
   <div class="columns is-multiline">
 
     <div ng-repeat="post in postsIndex.all track by $index" class="column is-half is-offset-one-quarter box">
-
-
-        <div ng-show="postsIndex.showPost(post, $index)">
-
           <h2>"{{ post.description }}"</h2>
           <img ng-src="{{ post.image }}">
           <h2>{{ post.headline }}</h2>
@@ -37,5 +33,4 @@
         </div>
 
       </div>
-  </div>
 </div>
