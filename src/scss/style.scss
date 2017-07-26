@@ -7,6 +7,18 @@ $primary: #4DD2E5;
   display: none;
 }
 
+div.section {
+  background-color: #eaf9f6;
+}
+
+section.section {
+  background-color: #eaf9f6;
+
+}
+
+.backgroundColor {
+  background-color: #eaf9f6;
+}
 
 * {
   font-family: 'Karla', sans-serif;
@@ -67,6 +79,8 @@ body {
 
 img {
   box-shadow: 0px 3px 10px #7fc1b2;
+  max-width: 100%;
+
   }
 
 .postNewImage {
@@ -87,12 +101,14 @@ img {
 
 .userImage {
   display: inline-block;
-  width: 150px;
-  height: 180px;
-  border-radius: 60%;
+  width: 110px;
+  height: 120px;
+  border-radius: 80%;
   margin: 8px;
-  box-shadow: none;
-  border: 5px solid white;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border: 5px solid #7fc1b2;
 }
 
 .userBackground {
@@ -104,9 +120,35 @@ img {
 }
 
 .friendBlock {
-  max-width: 200px;
+  max-width: 300px;
   display: inline-block;
   margin: 10px;
-  border: 1px solid #c2c3c4;
+  margin-bottom: none;
+  border: 1px solid #7fc1b2;
   max-height: 300px;
+  border-radius: 3px;
+  background-color: white;
+}
+
+.mediaText {
+  font-size: 13px;
+  float: left;
+}
+
+.floatRight{
+  float: right;
+  display: block;
+}
+
+.commentBlock {
+  max-width: 300px;
+  height: 40px;
+}
+
+.comment {
+  border-radius: 4px;
+}
+
+.inlineBlock {
+  display: inline-block;
 }
