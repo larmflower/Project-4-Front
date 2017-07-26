@@ -14,6 +14,24 @@ function PostsIndexCtrl(Post, User, $state, Comment, $auth) {
 
   vm.user = User.get({ id: $auth.getPayload().id });
 
+  function postsLiked(post) {
+    if(post.posts_liked_ids.includes(vm.user.id)) {
+      const index = post.posts_liked_ids.indexOf(vm.user.id);
+      post.posts_liked_ids.splice(index, 1);
+    } else {
+      post.posts_liked_ids.push(vm.user.id);
+    }
+    console.log(post);
+    Post
+      .update({id: post.id }, post)
+      .$promise
+      .then((post) => {
+        console.log(post);
+      });
+  }
+
+  vm.liked = postsLiked;
+
   function postsDelete(post) {
     Post
       .delete({ id: post.id })

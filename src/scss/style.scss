@@ -3,6 +3,15 @@
 $primary: #4DD2E5;
 @import "bulma/bulma";
 
+@font-face {
+  font-family: 'F3D';
+  src: url('/fonts/Frontage/F-3D.woff') format('woff'),
+       url('/fonts/Frontage/F-3D.woff2') format('woff2'),
+       url('/fonts/Frontage/F-3D.otf') format('otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .hideBox {
   display: none;
 }
@@ -27,7 +36,8 @@ body {
     h1 {
       letter-spacing: 1px;
       font-weight: 700;
-      font-size: 24px;
+      font-size: 32px;
+      font-family: 'F3D';
     }
     li {
       display: inline-block;
@@ -62,6 +72,13 @@ body {
     background-size: cover;
     background-position: center;
     height: 610px;
+  }
+
+  .description {
+    text-align: center;
+  }
+  .image {
+    text-align: center;
   }
 }
 
