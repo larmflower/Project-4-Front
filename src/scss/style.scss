@@ -19,6 +19,7 @@ body {
   }
 
   nav {
+
     h1 {
       letter-spacing: 1px;
       font-weight: 700;
@@ -78,4 +79,30 @@ img {
 
 .centered {
   text-align: center;
+}
+
+.userImage {
+  display: inline-block;
+  width: 150px;
+  height: 180px;
+  border-radius: 60%;
+  margin: 8px;
+  box-shadow: none;
+  border: 5px solid white;
+}
+
+.userBackground {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-image: url('https://images.unsplash.com/photo-1431263186120-72a7fefb3a50?dpr=1&amp;auto=format&amp;fit=crop&amp;w=1080&amp;h=720&amp;q=80&amp;cs=tinysrgb&amp;crop=');
+  border: 5px solid white;
+}
+
+.friendBlock {
+  max-width: 200px;
+  display: inline-block;
+  margin: 10px;
+  border: 1px solid #c2c3c4;
+  max-height: 300px;
 }
