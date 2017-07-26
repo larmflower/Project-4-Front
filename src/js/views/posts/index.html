@@ -31,12 +31,12 @@
             </div>
           </div>
 
-          <div ng-if="main.isAuthenticated()">
+          <!-- <div ng-if="main.isAuthenticated()">
             <form ng-submit="postsIndex.addComment(post)">
               <textarea class="comment" ng-model="postsIndex.newComment.body"></textarea>
               <br><button class="button is-small is-primary">Add Comment</button>
             </form>
-          </div>
+          </div> -->
 
           <a ng-click="postsIndex.liked(post)" ng-if="main.isAuthenticated()" class="fa fa-thumbs-o-up fa-2x">Like</a><span> {{ post.posts_liked_ids.length }} </span>
         </div>
