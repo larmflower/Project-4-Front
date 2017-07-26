@@ -7,21 +7,21 @@
 <div class="section">
   <div class="columns is-multiline">
 
-    <div ng-repeat="post in postsIndex.all track by $index" class="column is-half is-offset-one-quarter box">
+    <div ng-repeat="post in postsIndex.all track by $index" class="post column is-half is-offset-one-quarter box">
           <h2>{{ post.headline }}</h2>
           <img ng-src="{{ post.image }}">
           <h2>"{{ post.description }}"</h2>
-          <h3>{{ post.src }}</h3>
+          <h3><a href="{{ post.src }}">{{ post.src }}</a></h3>
           <h2>@{{ post.user.username }}</h2>
 
           <button class="button is-small is-danger is-outlined" ng-click="postsIndex.delete(post)" ng-if="main.isAuthenticated() && main.currentUser.id === post.user.id">Delete</button>
 
-          <div class="commentBlock" ng-if="main.isAuthenticated()">
+          <!-- <div class="commentBlock" ng-if="main.isAuthenticated()">
             <form ng-submit="postsIndex.addComment(post)">
               <textarea class="comment is-primary" ng-model="postsIndex.newComment.body"></textarea>
               <a class="is-primary"><i class="fa fa-commenting-o" aria-hidden="true"></i></a>
             </form>
-          </div>
+          </div> -->
 
           <div ng-repeat="comment in postsIndex.comments" class="column is-half">
             <div ng-if="post.id === comment.post.id">
@@ -31,12 +31,12 @@
             </div>
           </div>
 
-          <!-- <div ng-if="main.isAuthenticated()">
+          <div ng-if="main.isAuthenticated()">
             <form ng-submit="postsIndex.addComment(post)">
               <textarea class="comment" ng-model="postsIndex.newComment.body"></textarea>
               <br><button class="button is-small is-primary">Add Comment</button>
             </form>
-          </div> -->
+          </div>
 
           <a ng-click="postsIndex.liked(post)" ng-if="main.isAuthenticated()" class="fa fa-thumbs-o-up fa-2x">Like</a><span> {{ post.posts_liked_ids.length }} </span>
         </div>

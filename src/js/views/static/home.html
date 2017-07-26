@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 
 
-<div class="field">
-  <div class="control">
-    <input type="text" class="input is-primary" ng-model="homectrl.q" placeholder="Filter articles by description..">
-  </div>
-</div>
+
 
 <div class="section">
+  <div class="field">
+    <div class="control">
+      <input type="text" class="input is-primary" ng-model="homectrl.q" placeholder="Filter articles by description..">
+    </div>
+  </div>
   <div class="box" ng-repeat="article in homectrl.filtered">
     <article class="media">
       <div class="media-left">
@@ -37,7 +38,7 @@
   </div>
 
 <div class="box">
-  <div class="button is-primary" ng-click="homectrl.getArticle('bbc-news')">BBC </div>
+  <div class="button buttonFont is-primary" ng-click="homectrl.getArticle('bbc-news')">BBC </div>
   <div class="button is-primary" ng-click="homectrl.getArticle('buzzfeed')">Buzzfeed</div>
   <div class="button is-primary" ng-click="homectrl.getArticle('daily-mail')">Daily Mail UK</div>
   <div class="button is-primary" ng-click="homectrl.getArticle('financial-times')">Financial Times</div>
