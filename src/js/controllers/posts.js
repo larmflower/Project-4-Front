@@ -37,9 +37,11 @@ function PostsIndexCtrl(Post, User, $state, Comment, $auth) {
 
   vm.delete = postsDelete;
 
+
   function addComment(post) {
     vm.newComment.user_id = vm.user.id;
     vm.newComment.post_id = post.id;
+
 
     Comment
     .save(vm.newComment)

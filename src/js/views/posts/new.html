@@ -6,7 +6,7 @@
       <form class="box" ng-submit="postsNew.create()" name="postsNew.postForm" novalidate>
         <h2>Post</h2>
 
-        <p ng-if="postsNew.article">You are currently posting on: {{ postsNew.article.title }}</p>
+        <p ng-if="postsNew.article">"{{ postsNew.article.title }}"</p><br>
 
         <div class="field">
           <p class="control">
