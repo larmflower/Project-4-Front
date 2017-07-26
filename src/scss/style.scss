@@ -4,10 +4,82 @@ $primary: #4DD2E5;
 @import "bulma/bulma";
 
 @font-face {
-  font-family: 'F3D';
+  font-family: 'F-3D';
   src: url('/fonts/Frontage/F-3D.woff') format('woff'),
        url('/fonts/Frontage/F-3D.woff2') format('woff2'),
        url('/fonts/Frontage/F-3D.otf') format('otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FC-Bottom';
+  src: url('/fonts/Frontage/FC-Bottom.woff') format('woff'),
+       url('/fonts/Frontage/FC-Bottom.woff2') format('woff2'),
+       url('/fonts/Frontage/FC-Bottom.otf') format('otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FC-Bulb';
+  src: url('/fonts/Frontage/FC-Bulb.woff') format('woff'),
+       url('/fonts/Frontage/FC-Bulb.woff2') format('woff2'),
+       url('/fonts/Frontage/FC-Bulb.otf') format('otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FC-Inline';
+  src: url('/fonts/Frontage/FC-Inline.woff') format('woff'),
+       url('/fonts/Frontage/FC-Inline.woff2') format('woff2'),
+       url('/fonts/Frontage/FC-Inline.otf') format('otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FC-Line';
+  src: url('/fonts/Frontage/FC-Line.woff') format('woff'),
+       url('/fonts/Frontage/FC-Line.woff2') format('woff2'),
+       url('/fonts/Frontage/FC-Line.otf') format('otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FC-Neon';
+  src: url('/fonts/Frontage/FC-Neon.woff') format('woff'),
+       url('/fonts/Frontage/FC-Neon.woff2') format('woff2'),
+       url('/fonts/Frontage/FC-Neon.otf') format('otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FC-Regular';
+  src: url('/fonts/Frontage/FC-Regular.woff') format('woff'),
+       url('/fonts/Frontage/FC-Regular.woff2') format('woff2'),
+       url('/fonts/Frontage/FC-Regular.otf') format('otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FC-Shadow';
+  src: url('/fonts/Frontage/FC-Shadow.woff') format('woff'),
+       url('/fonts/Frontage/FC-Shadow.woff2') format('woff2'),
+       url('/fonts/Frontage/FC-Shadow.otf') format('otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FCB';
+  src: url('/fonts/Frontage/FCB.woff') format('woff'),
+       url('/fonts/Frontage/FCB.woff2') format('woff2'),
+       url('/fonts/Frontage/FCB.otf') format('otf');
   font-weight: normal;
   font-style: normal;
 }
@@ -48,8 +120,8 @@ body {
     h1 {
       letter-spacing: 1px;
       font-weight: 700;
-      font-size: 32px;
-      font-family: 'F3D';
+      font-size: 50px;
+      font-family: 'F-3D';
     }
     li {
       display: inline-block;
@@ -63,7 +135,7 @@ body {
     height: 610px;
   }
   h2 {
-    font-size: 24px;
+    font-size: 30px;
   }
   .image {
     margin: 20px auto;
@@ -77,10 +149,18 @@ body {
   .hero {
     margin: 10px auto;
     padding: 10px auto;
+    .footerText {
+      font-family: 'FCB';
+      font-size: 18px;
+    }
+    .dev {
+      font-family: 'FC-Inline';
+      font-size: 24px;
+    }
   }
 
   .about {
-    // background-image: url('../images/about.png');
+    background-image: url('../images/about.jpg');
     background-size: cover;
     background-position: center;
     height: 610px;
@@ -91,6 +171,10 @@ body {
   }
   .image {
     text-align: center;
+  }
+
+  .centered {
+    font-family: 'FC-Regular';
   }
 }
 
