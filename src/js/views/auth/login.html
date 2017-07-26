@@ -6,15 +6,21 @@
         <div class="field">
           <label class="label" for="email">Email</label>
           <p class="control">
-            <input class="input" type="email" name="email" id="email" ng-model="login.credentials.email">
+            <input class="input" type="email" name="email" id="email" ng-model="login.credentials.email" required>
           </p>
+          <div ng-messages="login.loginForm.email.$error" role="alert" ng-show="(login.loginForm.$submitted || login.loginForm.email.$touched) && login.loginForm.email.$invalid" class="error">
+            <div ng-message="required">Please enter a value for this field.</div>
+          </div>
         </div>
 
         <div class="field">
           <label class="label" for="password">Password</label>
           <p class="control">
-            <input class="input" type="password" name="password" id="password" ng-model="login.credentials.password">
+            <input class="input" type="password" name="password" id="password" ng-model="login.credentials.password" required>
           </p>
+          <div ng-messages="login.loginForm.password.$error" role="alert" ng-show="(login.loginForm.$submitted || login.loginForm.password.$touched) && login.loginForm.password.$invalid" class="error">
+            <div ng-message="required">Please enter a value for this field.</div>
+          </div>
         </div>
 
         <div class="field">

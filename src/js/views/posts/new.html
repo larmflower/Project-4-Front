@@ -12,21 +12,30 @@
           <p class="control">
             <label class="label" for="headline">Headline</label>
           </p>
-          <input type="text" class="input" id="headline" name="headline" ng-model="postsNew.post.headline">
+          <input type="text" class="input" id="headline" name="headline" ng-model="postsNew.post.headline" required>
+          <div ng-messages="postsNew.postForm.headline.$error" role="alert" ng-show="(postsNew.postForm.$submitted || postsNew.postForm.headline.$touched) && postsNew.postForm.headline.$invalid" class="error">
+            <div ng-message="required">Please enter a value for this field.</div>
+          </div>
         </div>
 
         <div class="field" ng-if="!postsNew.article">
           <p class="control">
             <label class="label" for="src">Source</label>
           </p>
-          <input type="text" class="input" id="src" name="src" ng-model="postsNew.post.src">
+          <input type="text" class="input" id="src" name="src" ng-model="postsNew.post.src" required>
+          <div ng-messages="postsNew.postForm.src.$error" role="alert" ng-show="(postsNew.postForm.$submitted || postsNew.postForm.src.$touched) && postsNew.postForm.src.$invalid" class="error">
+            <div ng-message="required">Please enter a value for this field.</div>
+          </div>
         </div>
 
         <div class="field">
           <p class="control">
             <label class="label" for="categories">Categories</label>
           </p>
-          <input type="text" class="input" id="categories" name="categories" ng-model="postsNew.post.categories">
+          <input type="text" class="input" id="categories" name="categories" ng-model="postsNew.post.categories" required>
+          <div ng-messages="postsNew.postForm.categories.$error" role="alert" ng-show="(postsNew.postForm.$submitted || postsNew.postForm.categories.$touched) && postsNew.postForm.categories.$invalid" class="error">
+            <div ng-message="required">Please enter a value for this field.</div>
+          </div>
         </div>
 
 
@@ -34,7 +43,10 @@
           <p class="control">
             <label class="label" for="description">Description</label>
           </p>
-          <input type="text" class="input" id="description" name="description" ng-model="postsNew.post.description">
+          <input type="text" class="input" id="description" name="description" ng-model="postsNew.post.description" required>
+          <div ng-messages="postsNew.postForm.description.$error" role="alert" ng-show="(postsNew.postForm.$submitted || postsNew.postForm.description.$touched) && postsNew.postForm.description.$invalid" class="error">
+            <div ng-message="required">Please enter a value for this field.</div>
+          </div>
         </div>
 
 

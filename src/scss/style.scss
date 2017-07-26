@@ -3,6 +3,10 @@
 $primary: #4DD2E5;
 @import "bulma/bulma";
 
+.hideBox {
+  display: none;
+}
+
 
 * {
   font-family: 'Karla', sans-serif;

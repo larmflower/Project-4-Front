@@ -7,9 +7,9 @@
 <div class="section">
   <div class="columns is-multiline">
 
-    <div ng-repeat="post in postsIndex.all" class="column is-half is-offset-one-quarter box">
+    <div ng-repeat="post in postsIndex.all track by $index" class="column is-half is-offset-one-quarter box">
 
-        <!-- <div ng-if="postsIndex.isFriendsPost(post)"> -->
+        <div ng-show="postsIndex.showPost(post, $index)">
           <h2>"{{ post.description }}"</h2>
           <img ng-src="{{ post.image }}">
           <h2>{{ post.headline }}</h2>
@@ -19,8 +19,8 @@
           <button class="button is-small is-danger" ng-click="postsIndex.delete(post)" ng-if="main.isAuthenticated() && main.currentUser.id === post.user.id">Delete</button>
 
           <div ng-if="main.isAuthenticated()">
-            <form ng-submit="postsIndex.add()">
-              <textarea type="text" name="body" class="comment"></textarea>
+            <form ng-submit="postsIndex.addComment(post)">
+              <textarea class="comment" ng-model="postsIndex.newComment.body"></textarea>
               <button class="button is-small is-primary">Add Comment</button>
             </form>
           </div>
@@ -35,5 +35,5 @@
         </div>
 
       </div>
-  <!-- </div> -->
+  </div>
 </div>

@@ -6,6 +6,7 @@ angular
 PostsIndexCtrl.$inject = ['Post', 'User', '$state', 'Comment', '$auth'];
 function PostsIndexCtrl(Post, User, $state, Comment, $auth) {
   const vm = this;
+  vm.newComment = {};
 
   vm.all = Post.query();
   vm.user = User.query();
@@ -13,17 +14,17 @@ function PostsIndexCtrl(Post, User, $state, Comment, $auth) {
 
   vm.user = User.get({ id: $auth.getPayload().id });
 
-  // function isFriendsPost(post) {
-  //   let friendsExist = false;
-  //   vm.user.friends.forEach((friend) => {
-  //     if(post.user.id === friend.id || post.user.id === vm.user.id) {
-  //       friendsExist = true;
-  //     }
-  //   });
-  //   return friendsExist;
-  // }
-  // vm.isFriendsPost = isFriendsPost;
+  function showPost(post, $index) {
+    let showPost = false;
+    post.user.id === vm.user.id ? showPost = true : vm.all.splice($index, 1);
+    vm.user.friends.forEach((friend) => {
+      post.user.id === friend.id ? showPost = true : vm.all.splice($index, 1);
+    });
+    return showPost;
+  }
 
+  vm.showPost = showPost;
+  console.log(vm.all);
 
   function postsDelete(post) {
     Post
@@ -36,19 +37,22 @@ function PostsIndexCtrl(Post, User, $state, Comment, $auth) {
 
   vm.delete = postsDelete;
 
-  // function Add(comment) {
-  //   // vm.comment.post_id = vm.postid;
-  //   Comment
-  //   .save({ comment: vm.comment })
-  //   .$promise
-  //   .then((comment) => {
-  //     vm.post.comments.push(comment);
-  //     vm.comment = {};
-  //   });
-  // }
-  // vm.add = Add;
+  function addComment(post) {
+    vm.newComment.user_id = vm.user.id;
+    vm.newComment.post_id = post.id;
 
-  function Delete(comment) {
+    Comment
+    .save(vm.newComment)
+    .$promise
+    .then((comment) => {
+      console.log(comment);
+      vm.comments.push(comment);
+      vm.newComment = {};
+    });
+  }
+  vm.addComment = addComment;
+
+  function deleteComment(comment) {
     Comment
       .delete({ id: comment.id })
       .$promise
@@ -56,7 +60,7 @@ function PostsIndexCtrl(Post, User, $state, Comment, $auth) {
         $state.reload();
       });
   }
-  vm.deleteComment = Delete;
+  vm.deleteComment = deleteComment;
 
 }
 
