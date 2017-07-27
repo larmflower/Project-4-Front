@@ -1,7 +1,8 @@
 // Import all of your scss files here
 @import "bulma/sass/utilities/initial-variables";
-$primary: #757bea;
-$background: #7fc1b2;
+$primary: #7fc1b2;
+$background: #f4f5f7;
+$lightGrey: #d9dce0;
 $darkGrey: #34393F;
 @import "bulma/bulma";
 @font-face {
@@ -122,8 +123,7 @@ body {
   padding: 0px;
   nav {
 
-    border-top: 2px solid $darkGrey;
-    border-bottom: 2px solid $darkGrey;
+    max-height: 50px;
     h1 {
       letter-spacing: 1px;
       font-weight: 700;
@@ -137,7 +137,7 @@ body {
   }
 
   div.box {
-    border: 1px solid $darkGrey;
+    border: 1px solid #d9dce0;
   }
 
   .home {
@@ -168,7 +168,7 @@ body {
     margin: 10px auto;
     padding: 10px auto;
 
-    color: #111cdd;
+    color: $darkGrey;
 
     .footerText {
       font-family: 'FCB';
@@ -287,3 +287,21 @@ body {
   h1.hvr-float-shadow {
     font-size: 50px;
   }
+
+div.scroll {
+  border: 1px solid #d9dce0;
+  border-style: inset;
+  border-radius: 4px;
+}
+
+textarea.comment {
+  border: 1px solid #d9dce0;
+  border-style: inset;
+  border-radius: 4px;
+  min-width: 50%;
+  margin-left: 25%;
+}
+
+a.ng-binding {
+  font-size: 12px;
+}
