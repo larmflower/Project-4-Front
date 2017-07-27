@@ -385,3 +385,9 @@ button.button {
     overflow: hidden;
   }
 }
+
+button.noBorder.button {
+  margin-bottom: 10px;
+  float: right;
+  max-height: 25px;
+}
