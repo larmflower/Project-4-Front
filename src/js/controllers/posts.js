@@ -3,8 +3,8 @@ angular
   .controller('PostsIndexCtrl', PostsIndexCtrl)
   .controller('PostsNewCtrl', PostsNewCtrl);
 
-PostsIndexCtrl.$inject = ['Post', 'User', '$state', 'Comment', '$auth'];
-function PostsIndexCtrl(Post, User, $state, Comment, $auth) {
+PostsIndexCtrl.$inject = ['Post', 'User', '$state', 'Comment', '$auth', '$scope', 'filterFilter'];
+function PostsIndexCtrl(Post, User, $state, Comment, $auth, $scope, filterFilter) {
   const vm = this;
   vm.newComment = {};
 
@@ -13,6 +13,19 @@ function PostsIndexCtrl(Post, User, $state, Comment, $auth) {
   vm.comments = Comment.query();
 
   vm.user = User.get({ id: $auth.getPayload().id });
+
+  function filterPosts() {
+    const params = { description: vm.q };
+    vm.filtered = filterFilter(vm.all, params);
+  }
+
+  $scope.$watchGroup([
+    () => vm.q,
+    () => vm.all.$resolved
+  ], filterPosts);
+
+  filterPosts();
+
 
   function postsLiked(post) {
     if(post.posts_liked_ids.includes(vm.user.id)) {

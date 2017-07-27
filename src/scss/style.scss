@@ -154,12 +154,12 @@ body {
   .hero-foot {
     margin: 10px auto;
     padding: 10px auto;
-
-    color: #111cdd;
-
     .footerText {
       font-family: 'FCB';
       font-size: 18px;
+      a {
+        color: #7fc1b2;
+      }
     }
     .dev {
       font-family: 'FC-Inline';

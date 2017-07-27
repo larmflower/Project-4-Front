@@ -6,21 +6,20 @@ HomeCtrl.$inject = ['$auth', '$scope', 'filterFilter', 'newsService', '$rootScop
 function HomeCtrl($auth, $scope, filterFilter, newsService, $rootScope, $state) {
   const vm = this;
 
-  function filterArticles(){ //>>>>>????? this function
+  function filterArticles(){
     const params = { description: vm.q };
     vm.filtered = filterFilter(vm.articles, params);
   }
 
   vm.articles = [];
 
-  function getArticle(get) { //this function knows nothing jon snow, it's a shoe down a well
+  function getArticle(get) {
 
     newsService.getNews(get)
     .then((res)=>{
       vm.articles = res.articles;
       filterArticles();
-    });// object
-    // vm.articles = newsService.getNews(get);
+    });
 
 
   }
@@ -34,7 +33,7 @@ function HomeCtrl($auth, $scope, filterFilter, newsService, $rootScope, $state) 
 
   vm.retweet = retweet;
 
-  $scope.$watchGroup([ //><>>>>??? scope
+  $scope.$watchGroup([
     () => vm.q
   ], filterArticles);
 

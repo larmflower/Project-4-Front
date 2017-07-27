@@ -26,14 +26,14 @@
       </div>
     </div>
 
-  <h2>(Requests):</h2>
+  <h2>Requests</h2>
   <h4 ng-if="usersShow.pending.length === 0">You currently have no pending friend requests</h4>
   <div>
       <div ng-repeat="pending in usersShow.pending">
         <h4>{{ pending.username }}</h4>
         <img class="userImage" ng-src="{{pending.image}}">
-        <button ng-click="usersShow.accepted(pending)" class="button">Accept Friend Request</button>
-        <button ng-click="usersShow.declined(pending)" class="button">Decline Friend Request</button>
+        <button ng-click="usersShow.accepted(pending)" class="button is-medium is-primary">Accept</button>
+        <button ng-click="usersShow.declined(pending)" class="button is-medium is-danger">Decline</button>
       </div>
   </div>
 </div>
