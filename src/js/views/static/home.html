@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 
 
-
-
 <div class="section grit">
   <div class="field grit">
     <div class="control">
@@ -29,7 +27,9 @@
             </a> -->
             <a ng-click="homectrl.retweet(article)" class="level-item"><span class="icon"><i class="fa fa-retweet fa-3x"></i></span>
             </a>
-            <a class="level-item"><span class="icon"><i class="fa fa-heart fa-3x"></i></span>
+            <a ng-click="homectrl.retweet(article)" class="level-item"><span class="icon is-small"><i class="fa fa-retweet"></i></span>
+            </a>
+            <a ng-click="toggle = ! toggle" ng-class="{'red' : toggle }" class="level-item"><span class="icon is-small"><i class="fa fa-heart"></i></span>
             </a>
           </div>
         </nav>
