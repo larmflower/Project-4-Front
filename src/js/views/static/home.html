@@ -16,14 +16,16 @@
       </div>
       <div class="media-content">
         <div class="content">
-          <p><strong>{{ article.title }}</strong> <a href="{{ article.url }}" target="_blank"><small>{{ article.url }}</small></a> <small>{{ article.author }}</small><br>
+          <p><strong>{{ article.title }}</strong> <a href="{{ article.url }}" target="_blank"><small class="hoverUnderline">{{ article.url }}</small></a> <small>{{ article.author }}</small><br>
             {{ article.description }}
           </p>
         </div>
         <nav class="level is-mobile">
           <div class="level-left">
-            <a class="level-item">
+            <!-- <a class="level-item">
               <span class="icon is-small"><i class="fa fa-reply"></i></span>
+            </a> -->
+            <a ng-click="homectrl.retweet(article)" class="level-item"><span class="icon"><i class="fa fa-retweet fa-3x"></i></span>
             </a>
             <a ng-click="homectrl.retweet(article)" class="level-item"><span class="icon is-small"><i class="fa fa-retweet"></i></span>
             </a>

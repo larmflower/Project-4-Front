@@ -1,7 +1,8 @@
 // Import all of your scss files here
 @import "bulma/sass/utilities/initial-variables";
-$primary: #757bea;
-$background: #F0E9D6;
+$primary: #7fc1b2;
+$background: #f4f5f7;
+$lightGrey: #d9dce0;
 $darkGrey: #34393F;
 @import "bulma/bulma";
 @font-face {
@@ -122,8 +123,7 @@ body {
   padding: 0px;
   nav {
 
-    border-top: 2px solid $darkGrey;
-    border-bottom: 2px solid $darkGrey;
+    max-height: 50px;
     h1 {
       letter-spacing: 1px;
       font-weight: 700;
@@ -137,7 +137,7 @@ body {
   }
 
   div.box {
-    border: 1px solid $darkGrey;
+    border: 1px solid #d9dce0;
   }
 
   .home {
@@ -167,6 +167,9 @@ body {
   .hero-foot {
     margin: 10px auto;
     padding: 10px auto;
+    border-top: 1px solid #34393F;
+    color: #34393F;
+
     .footerText {
       font-family: 'FCB';
       font-size: 18px;
@@ -186,6 +189,7 @@ body {
     background-size: cover;
     background-position: center;
     height: 500px;
+    border: 1px solid #d1d2d3;
   }
 
   .description {
@@ -295,4 +299,99 @@ body {
 
 .like {
   color: red;
+
+
+div.scroll {
+  border: 1px solid #d9dce0;
+  border-style: inset;
+  border-radius: 4px;
+}
+
+textarea.comment {
+  border: 1px solid #d9dce0;
+  border-style: inset;
+  border-radius: 4px;
+  min-width: 80%;
+  margin-left: 20px;
+  margin-top: 4px;
+  padding: 10px;
+  max-height: 40px;
+}
+
+a.ng-binding {
+  font-size: 12px;
+}
+
+.softBorder {
+  border: 1px solid #d9dce0;
+  padding: 8px;
+}
+
+hr {
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+    background-color: #d9dce0;
+}
+
+.noBorder {
+  border: none;
+}
+
+form.ng-pristine {
+  line-height: none;
+  background-color: #d9dce0;
+  max-height: 50px;
+  border-radius: 4px;
+}
+
+.commentButton {
+  margin-bottom: 60px;
+  padding-bottom: 20px;
+}
+
+.hoverUnderline:hover {
+  text-decoration: underline;
+}
+
+form.box {
+  min-height: 100vh;
+  background-color: white;
+}
+
+button.button {
+  padding: none;
+}
+
+.like {
+  margin-top: 20px;
+}
+
+
+
+.aboutTextContainer {
+  position: relative;
+  .aboutText {
+    font-family: 'FC-Inline';
+    font-weight: bold;
+    font-size: 45px;
+    color: white;
+    text-align: center;
+    position: absolute;
+
+    left: 20%;
+    right: 20%;
+    margin-bottom: 10%;
+    margin-top: 5%;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    -webkit-text-stroke: .3px black;
+    text-shadow: 1px 1px 2px black;
+    overflow: hidden;
+  }
+}
 }
