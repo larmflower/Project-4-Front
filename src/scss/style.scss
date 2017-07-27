@@ -1,6 +1,8 @@
 // Import all of your scss files here
 @import "bulma/sass/utilities/initial-variables";
 $primary: #757bea;
+$background: #F0E9D6;
+$darkGrey: #34393F;
 @import "bulma/bulma";
 @font-face {
   font-family: 'F-3D';
@@ -82,6 +84,11 @@ $primary: #757bea;
   font-weight: normal;
   font-style: normal;
 }
+
+.grit {
+  -webkit-mask-image: url('/images/bg.png');
+  mask-image: url('/images/bg.png');
+}
 .buttonFont {
   font-weight: bold;
 }
@@ -91,16 +98,16 @@ $primary: #757bea;
 }
 
 div.section {
-  background-color: #eaf9f6;
+  background-color: $background;
 }
 
 section.section {
-  background-color: #eaf9f6;
+  background-color: $background;
 
 }
 
 .backgroundColor {
-  background-color: #eaf9f6;
+  background-color: $background;
 }
 
 * {
@@ -115,6 +122,8 @@ body {
   padding: 0px;
   nav {
 
+    border-top: 2px solid $darkGrey;
+    border-bottom: 2px solid $darkGrey;
     h1 {
       letter-spacing: 1px;
       font-weight: 700;
@@ -125,6 +134,10 @@ body {
       display: inline-block;
     }
   }
+  }
+
+  div.box {
+    border: 1px solid $darkGrey;
   }
 
   .home {
