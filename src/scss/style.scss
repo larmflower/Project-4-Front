@@ -114,16 +114,12 @@ section.section {
   font-family: 'Karla', sans-serif;
 }
 
-html,body {
-  height: 100%;
-}
-
 body {
-
   .button.is-primary {
-    background-color: $darkGrey;
+  background-color: #7fc1b2;
   }
-
+  margin: 0px;
+  padding: 0px;
   nav {
 
     border-top: 2px solid $darkGrey;
@@ -138,6 +134,7 @@ body {
       display: inline-block;
     }
   }
+  }
 
   div.box {
     border: 1px solid $darkGrey;
@@ -147,15 +144,18 @@ body {
     background-image: url('../images/homepage.jpg');
     background-size: cover;
     background-position: center;
-    height: 610px;
+    height: 500px;
   }
+
   h2 {
     font-size: 30px;
     font-family: 'FC-Regular';
   }
+
   .image {
     margin: 20px auto;
   }
+
   .button {
     margin: 20px auto;
   }
@@ -163,7 +163,8 @@ body {
   .sm {
     text-align: center;
   }
-  .hero {
+
+  .hero-foot {
     margin: 10px auto;
     padding: 10px auto;
 
@@ -184,7 +185,7 @@ body {
     background-image: url('../images/about.jpg');
     background-size: cover;
     background-position: center;
-    height: 610px;
+    height: 500px;
   }
 
   .description {
@@ -193,87 +194,96 @@ body {
   .image {
     text-align: center;
   }
-}
 
-img {
-  box-shadow: 0px 3px 10px #d1d2d3;
-  max-width: 100%;
+
+  img {
+    box-shadow: 0px 3px 10px #d1d2d3;
+    max-width: 100%;
+    }
+
+
+
+  .postNewImage {
+      max-width: 200px;
+    }
+
+
+  .postSource {
+    font-size: 12px;
   }
 
-.postNewImage {
-    max-width: 200px;
+  .box {
+    box-shadow: 0px 3px 10px #d1d2d3;
   }
 
-.postSource {
-  font-size: 12px;
-}
+  .centered {
+    text-align: center;
+  }
 
-.box {
-  box-shadow: 0px 3px 10px #d1d2d3;
-}
 
-.centered {
-  text-align: center;
-}
+  .userImage {
+    display: inline-block;
+    width: 110px;
+    height: 120px;
+    border-radius: 80%;
+    margin: 8px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border: 5px solid #7fc1b2;
+    box-shadow: none;
+  }
 
-.userImage {
-  display: inline-block;
-  width: 110px;
-  height: 120px;
-  border-radius: 80%;
-  margin: 8px;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  border: 5px solid #7fc1b2;
-  box-shadow: none;
-}
+  .userBackground {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    min-height: 100px;
+    background-image: url('https://images.unsplash.com/photo-1431263186120-72a7fefb3a50?dpr=1&amp;auto=format&amp;fit=crop&amp;w=1080&amp;h=720&amp;q=80&amp;cs=tinysrgb&amp;crop=');
+    border: 10px solid  #7fc1b2;
+    box-shadow: 0px 3px 10px #d1d2d3;
 
-.userBackground {
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  min-height: 100px;
-  background-image: url('https://images.unsplash.com/photo-1431263186120-72a7fefb3a50?dpr=1&amp;auto=format&amp;fit=crop&amp;w=1080&amp;h=720&amp;q=80&amp;cs=tinysrgb&amp;crop=');
-  border: 10px solid  #7fc1b2;
-  box-shadow: 0px 3px 10px #d1d2d3;
+  }
 
-}
+  .friendBlock {
+    max-width: 300px;
+    display: inline-block;
+    margin: 10px;
+    margin-bottom: none;
+    border: 1px solid #d1d2d3;
+    max-height: 300px;
+    border-radius: 3px;
+    background-color: white;
+  }
 
-.friendBlock {
-  max-width: 300px;
-  display: inline-block;
-  margin: 10px;
-  margin-bottom: none;
-  border: 1px solid #d1d2d3;
-  max-height: 300px;
-  border-radius: 3px;
-  background-color: white;
-}
+  .mediaText {
+    font-size: 13px;
+    float: left;
+  }
 
-.mediaText {
-  font-size: 13px;
-  float: left;
-}
+  .floatRight{
+    float: right;
+    display: block;
+  }
 
-.floatRight{
-  float: right;
-  display: block;
-}
+  .commentBlock {
+    max-width: 300px;
+    height: 40px;
+  }
 
-.commentBlock {
-  max-width: 300px;
-  height: 40px;
-}
+  .comment {
+    border-radius: 4px;
+  }
 
-.comment {
-  border-radius: 4px;
-}
+  .inlineBlock {
+    display: inline-block;
+  }
+  .scroll {
+    margin: 10px;
+    overflow: scroll;
+    height: 100px;
+  }
 
-.inlineBlock {
-  display: inline-block;
-}
-
-h1.hvr-float-shadow {
-  font-size: 50px;
-}
+  h1.hvr-float-shadow {
+    font-size: 50px;
+  }

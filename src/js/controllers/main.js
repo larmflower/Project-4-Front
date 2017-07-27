@@ -9,8 +9,20 @@ function MainCtrl($auth, $state, $rootScope, $scope, $transitions) {
 
 
   vm.isAuthenticated = $auth.isAuthenticated;
-
   vm.logout = logout;
+
+
+  function stateGo() {
+    if ($auth.getPayload()) {
+      $state.go('home');
+    } else {
+      $state.go('static');
+    }
+  }
+
+  vm.stateGo = stateGo;
+
+
 
   $rootScope.$on('error', (e, err) => {
     vm.stateHasChanged = false;

@@ -7,26 +7,28 @@
 <div class="section">
   <div class="columns is-multiline">
 
-    <div ng-repeat="post in postsIndex.all track by $index" class="post column is-half is-offset-one-quarter box">
-          <h2><strong>{{ post.headline }}</strong></h2>
+    <div ng-repeat="post in postsIndex.all track by $index" class="column is-half is-offset-one-quarter box">
+      <div>
+          <h2>{{ post.headline }}</h2>
           <img ng-src="{{ post.image }}">
-          <h6>"{{ post.description }}"</h6>
-          <h3><a href="{{ post.src }}">{{ post.src }}</a></h3>
-          <h2>@{{ post.user.username }}</h2>
+          <h2>"{{ post.description }}"</h2>
+          <a href="{{ post.src }}" target="_blank">{{ post.src }}</a>
+          <h3>@{{ post.user.username }}</h3>
+
 
           <button class="button is-small is-danger is-outlined" ng-click="postsIndex.delete(post)" ng-if="main.isAuthenticated() && main.currentUser.id === post.user.id">Delete</button>
 
           <!-- <div class="commentBlock" ng-if="main.isAuthenticated()">
             <form ng-submit="postsIndex.addComment(post)">
               <textarea class="comment is-primary" ng-model="postsIndex.newComment.body"></textarea>
-              <a class="is-primary"><i class="fa fa-commenting-o" aria-hidden="true"></i></a>
+              <a class="is-primary" ng-click="postsIndex.addComment(post)"><i class="fa fa-commenting-o" aria-hidden="true"></i></a>
             </form>
           </div> -->
 
-          <div ng-repeat="comment in postsIndex.comments" class="column is-half">
-            <div ng-if="post.id === comment.post.id">
-              <p class="centered">"{{ comment.body }}"</p>
-              <h5><a sref="{{comment.user}}">@{{ comment.user.username }}</a></h5>
+          <div class="scroll">
+          <div ng-repeat="comment in post.comments">
+              <p>"{{ comment.body }}"</p>
+              <h5><a ui-sref="profile({ id: comment.user.id })">@{{ comment.user.username }}</a></h5>
               <button ng-click="postsIndex.deleteComment(comment)" ng-if="main.isAuthenticated() && main.currentUser.id === comment.user_id" class="button is-small is-danger is-outlined">Delete</button>
             </div>
           </div>
@@ -38,8 +40,8 @@
             </form>
           </div>
 
-          <a ng-click="postsIndex.liked(post)" ng-if="main.isAuthenticated()" class="fa fa-thumbs-o-up fa-2x">Like</a><span> {{ post.posts_liked_ids.length }} </span>
+            <a ng-click="postsIndex.liked(post)" ng-if="main.isAuthenticated()" class="fa fa-thumbs-o-up fa-2x">Like</a><span> {{ post.posts_liked_ids.length }} </span>
+          </div>
         </div>
-
       </div>
 </div>

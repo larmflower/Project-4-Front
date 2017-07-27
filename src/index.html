@@ -3,6 +3,7 @@
 <head>
   <base href="/">
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Make News</title>
 
   <link rel="icon" type="image/x-icon" href="favicon.ico" sizes="32x32" />
@@ -17,56 +18,60 @@
 </head>
 <body ng-controller="MainCtrl as main">
 
-  <nav class="nav">
-    <div class="nav-left">
+  <section class="hero is-large">
+    <div class="hero-head">
 
-      <a class="nav-item logo" ui-sref="static">
-        <h1 class="hvr-float-shadow">Make News</h1>
-      </a>
+      <nav class="nav">
+        <div class="nav-left">
+          <a class="nav-item logo" ng-click="main.stateGo()">
+            <h1>Make News</h1>
+          </a>
+        </div>
+
+        <span class="nav-toggle" ng-click="menuIsOpen = !menuIsOpen">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+
+        <div class="nav-right nav-menu" ng-class="{ 'is-active': menuIsOpen }">
+          <ul>
+            <li ng-if="main.isAuthenticated()"><a class="nav-item" ui-sref="home" alt="News"><i class="fa fa-newspaper-o fa-2x"></i></a></li>
+
+            <li ng-if="!main.isAuthenticated()"><a class="nav-item" ui-sref="about"><i class="fa fa-home fa-2x" aria-hidden="true"></i></a></li>
+
+            <li ng-if="main.isAuthenticated()"><a class="nav-item" ui-sref="postsIndex"><i class="fa fa-server" aria-hidden="true"></i></a></li>
+
+            <li ng-if="main.isAuthenticated()"><a class="nav-item" ui-sref="postsNew"><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i></a></li>
+
+            <li ng-if="main.isAuthenticated()"><a class="nav-item" ui-sref="usersIndex"><i class="fa fa-users fa-2x" aria-hidden="true"></i></a></li>
+
+            <li ng-if="!main.isAuthenticated()"><a class="nav-item" ui-sref="login"><i class="fa fa-sign-in fa-2x" aria-hidden="true"></i></a></li>
+
+            <li ng-if="!main.isAuthenticated()"><a class="nav-item" ui-sref="register"><i class="fa fa-user-plus" aria-hidden="true"></i></a></li>
+
+            <li ng-if="main.isAuthenticated()"><a href="profile" class="nav-item"><i class="fa fa-user fa-3x" aria-hidden="true"></i></a></li>
+
+            <li ng-if="main.isAuthenticated()"><a class="nav-item" ng-click="main.logout()"><i class="fa fa-sign-out fa-2x" aria-hidden="true"></i></a></li>
+          </ul>
+        </div>
+      </nav>
     </div>
-
-    <span class="nav-toggle" ng-click="menuIsOpen = !menuIsOpen">
-      <span></span>
-      <span></span>
-      <span></span>
-    </span>
-
-    <div class="nav-right nav-menu" ng-class="{ 'is-active': menuIsOpen }">
-      <ul>
-        <li ng-if="main.isAuthenticated()"><a class="nav-item" ui-sref="home" alt="News"><i class="fa fa-newspaper-o fa-2x"></i></a></li>
-
-        <li ng-if="!main.isAuthenticated()"><a class="nav-item" ui-sref="about"><i class="fa fa-home fa-2x" aria-hidden="true"></i></a></li>
-
-        <li ng-if="main.isAuthenticated()"><a class="nav-item" ui-sref="postsIndex"><i class="fa fa-server" aria-hidden="true"></i></a></li>
-
-        <li ng-if="main.isAuthenticated()"><a class="nav-item" ui-sref="postsNew"><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i></a></li>
-
-        <li ng-if="main.isAuthenticated()"><a class="nav-item" ui-sref="usersIndex"><i class="fa fa-users fa-2x" aria-hidden="true"></i></a></li>
-
-        <li ng-if="!main.isAuthenticated()"><a class="nav-item" ui-sref="login"><i class="fa fa-sign-in fa-2x" aria-hidden="true"></i></a></li>
-
-        <li ng-if="!main.isAuthenticated()"><a class="nav-item" ui-sref="register"><i class="fa fa-user-plus" aria-hidden="true"></i></a></li>
-
-        <li ng-if="main.isAuthenticated()"><a href="profile" class="nav-item"><i class="fa fa-user fa-3x" aria-hidden="true"></i></a></li>
-
-        <li ng-if="main.isAuthenticated()"><a class="nav-item" ng-click="main.logout()"><i class="fa fa-sign-out fa-2x" aria-hidden="true"></i></a></li>
-      </ul>
-    </div>
-  </nav>
+  </section>
 
   <main>
 
-    <div class="notification" ng-if="main.message"><p>{{ main.message }}</p></div>
+    <div class="hero-body">
+      <div class="notification" ng-if="main.message"><p>{{ main.message }}</p></div>
 
+      <main ui-view class="container"></main>
+    </div>
 
-
-    <main ui-view class="container"></main>
-
-    <section class="hero">
-      <div class="content has-text-centered">
-        <p class="footerText"><a href="https://github.com/larmflower" class="dev" target="_blank">Lauren Armbrüst</a> & <a href="https://github.com/alexandriako" class="dev" target="_blank">Alexandria Okamoto</a></p>
+      <div class="hero-foot">
+        <div class="container has-text-centered">
+          <p class="footerText"><a href="https://github.com/larmflower" class="dev" target="_blank">Lauren Armbrüst</a> & <a href="https://github.com/alexandriako" class="dev" target="_blank">Alexandria Okamoto</a></p>
+        </div>
       </div>
-    </section>
   </main>
 
 </body>
