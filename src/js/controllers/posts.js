@@ -61,14 +61,13 @@ function PostsIndexCtrl(Post, User, $state, Comment, $auth, $scope, filterFilter
     vm.newComment.user_id = vm.user.id;
     vm.newComment.post_id = post.id;
 
-
     Comment
     .save(vm.newComment)
     .$promise
     .then((comment) => {
-      console.log(comment);
       vm.comments.push(comment);
       vm.newComment = {};
+      $state.reload();
     });
   }
   vm.addComment = addComment;
