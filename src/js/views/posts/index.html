@@ -5,6 +5,11 @@
 
 
 <div class="section">
+  <div class="field">
+    <div class="control">
+      <input type="text" class="input is-primary" ng-model="postsIndex.q" placeholder="Filter articles by description..">
+    </div>
+  </div>
   <div class="columns is-multiline">
     <div ng-repeat="post in postsIndex.all track by $index" class="column is-half is-offset-one-quarter box">
       <div class="softBorder">
