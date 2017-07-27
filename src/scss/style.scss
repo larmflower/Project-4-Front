@@ -104,7 +104,6 @@ div.section {
 
 section.section {
   background-color: $background;
-
 }
 
 .backgroundColor {
@@ -115,14 +114,17 @@ section.section {
   font-family: 'Karla', sans-serif;
 }
 
-body {
-  .button.is-primary {
+.button.is-primary {
   background-color: #7fc1b2;
-  }
+}
+
+body {
   margin: 0px;
   padding: 0px;
-  nav {
 
+
+
+  nav {
     max-height: 50px;
     h1 {
       letter-spacing: 1px;
@@ -134,163 +136,163 @@ body {
       display: inline-block;
     }
   }
-  }
+}
 
-  div.box {
-    border: 1px solid #d9dce0;
-  }
+div.box {
+  border: 1px solid #d9dce0;
+}
 
-  .home {
-    background-image: url('../images/homepage.jpg');
-    background-size: cover;
-    background-position: center;
-    height: 500px;
-  }
+.home {
+  background-image: url('../images/homepage.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 500px;
+}
 
-  h2 {
-    font-size: 30px;
-    font-family: 'FC-Regular';
-  }
+h2 {
+  font-size: 30px;
+  font-family: 'FC-Regular';
+}
 
-  .image {
-    margin: 20px auto;
-  }
+.image {
+  margin: 20px auto;
+}
 
-  .button {
-    margin: 20px auto;
-  }
+.button {
+  margin: 20px auto;
+}
 
-  .sm {
-    text-align: center;
-  }
+.sm {
+  text-align: center;
+}
 
-  .hero-foot {
-    margin: 10px auto;
-    padding: 10px auto;
-    border-top: 1px solid #34393F;
-    color: #34393F;
+.hero-foot {
+  margin: 10px auto;
+  padding: 10px auto;
+  border-top: 1px solid #34393F;
+  color: #34393F;
 
-    .footerText {
-      font-family: 'FCB';
-      font-size: 18px;
-      a {
-        color: #7fc1b2;
-      }
+  .footerText {
+    font-family: 'FCB';
+    font-size: 18px;
+    a {
+      color: #7fc1b2;
     }
-    .dev {
-      font-family: 'FC-Inline';
-      font-size: 24px;
-    }
-
+  }
+  .dev {
+    font-family: 'FC-Inline';
+    font-size: 24px;
   }
 
-  .about {
-    background-image: url('../images/about.jpg');
-    background-size: cover;
-    background-position: center;
-    height: 500px;
-    border: 1px solid #d1d2d3;
-  }
+}
 
-  .description {
-    text-align: center;
-  }
-  .image {
-    text-align: center;
-  }
+.about {
+  background-image: url('../images/about.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 500px;
+  border: 1px solid #d1d2d3;
+}
 
-
-  img {
-    box-shadow: 0px 3px 10px #d1d2d3;
-    max-width: 100%;
-    }
+.description {
+  text-align: center;
+}
+.image {
+  text-align: center;
+}
 
 
-
-  .postNewImage {
-      max-width: 200px;
-    }
-
-
-  .postSource {
-    font-size: 12px;
-  }
-
-  .box {
-    box-shadow: 0px 3px 10px #d1d2d3;
-  }
-
-  .centered {
-    text-align: center;
-  }
+img {
+  box-shadow: 0px 3px 10px #d1d2d3;
+  max-width: 100%;
+}
 
 
-  .userImage {
-    display: inline-block;
-    width: 110px;
-    height: 120px;
-    border-radius: 80%;
-    margin: 8px;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    border: 5px solid #7fc1b2;
-    box-shadow: none;
-  }
 
-  .userBackground {
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    min-height: 100px;
-    background-image: url('https://images.unsplash.com/photo-1431263186120-72a7fefb3a50?dpr=1&amp;auto=format&amp;fit=crop&amp;w=1080&amp;h=720&amp;q=80&amp;cs=tinysrgb&amp;crop=');
-    border: 10px solid  #7fc1b2;
-    box-shadow: 0px 3px 10px #d1d2d3;
+.postNewImage {
+  max-width: 200px;
+}
 
-  }
 
-  .friendBlock {
-    max-width: 300px;
-    display: inline-block;
-    margin: 10px;
-    margin-bottom: none;
-    border: 1px solid #d1d2d3;
-    max-height: 300px;
-    border-radius: 3px;
-    background-color: white;
-  }
+.postSource {
+  font-size: 12px;
+}
 
-  .mediaText {
-    font-size: 13px;
-    float: left;
-  }
+.box {
+  box-shadow: 0px 3px 10px #d1d2d3;
+}
 
-  .floatRight{
-    float: right;
-    display: block;
-  }
+.centered {
+  text-align: center;
+}
 
-  .commentBlock {
-    max-width: 300px;
-    height: 40px;
-  }
 
-  .comment {
-    border-radius: 4px;
-  }
+.userImage {
+  display: inline-block;
+  width: 110px;
+  height: 120px;
+  border-radius: 80%;
+  margin: 8px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border: 5px solid #7fc1b2;
+  box-shadow: none;
+}
 
-  .inlineBlock {
-    display: inline-block;
-  }
-  .scroll {
-    margin: 10px;
-    overflow: scroll;
-    height: 100px;
-  }
+.userBackground {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  min-height: 100px;
+  background-image: url('https://images.unsplash.com/photo-1431263186120-72a7fefb3a50?dpr=1&amp;auto=format&amp;fit=crop&amp;w=1080&amp;h=720&amp;q=80&amp;cs=tinysrgb&amp;crop=');
+  border: 10px solid  #7fc1b2;
+  box-shadow: 0px 3px 10px #d1d2d3;
 
-  h1.hvr-float-shadow {
-    font-size: 50px;
-  }
+}
+
+.friendBlock {
+  max-width: 300px;
+  display: inline-block;
+  margin: 10px;
+  margin-bottom: none;
+  border: 1px solid #d1d2d3;
+  max-height: 300px;
+  border-radius: 3px;
+  background-color: white;
+}
+
+.mediaText {
+  font-size: 13px;
+  float: left;
+}
+
+.floatRight{
+  float: right;
+  display: block;
+}
+
+.commentBlock {
+  max-width: 300px;
+  height: 40px;
+}
+
+.comment {
+  border-radius: 4px;
+}
+
+.inlineBlock {
+  display: inline-block;
+}
+.scroll {
+  margin: 10px;
+  overflow: scroll;
+  height: 100px;
+}
+
+h1.hvr-float-shadow {
+  font-size: 50px;
+}
 
 
 .red {
@@ -299,7 +301,7 @@ body {
 
 .like {
   color: red;
-
+}
 
 div.scroll {
   border: 1px solid #d9dce0;
@@ -372,7 +374,6 @@ button.button {
 }
 
 
-
 .aboutTextContainer {
   position: relative;
   .aboutText {
@@ -399,4 +400,12 @@ button.noBorder.button {
   margin-bottom: 10px;
   float: right;
   max-height: 25px;
+}
+
+img.inlineBlock.image.is-32x32 {
+  margin: 0;
+}
+
+section.section {
+  min-width: 100vh;
 }
