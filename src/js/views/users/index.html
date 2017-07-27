@@ -18,8 +18,9 @@
       <div class="userImage inlineBlock" ng-style="{'background-image':'url( {{ user.image }} )'}"></div>
 
       <p ng-if="usersIndex.isFriend(user)" class="button is-small is-primary is-outlined floatRight">You are Friends  <span>&#10004</span></p>
-      <p ng-if="usersIndex.requested(user)" class="button is-small is-primary is-outlined floatRight">Requested!</p>
       <a ng-click="usersIndex.requestFriend(user)" ng-if="!usersIndex.isFriend(user) && !usersIndex.requested(user)" class="button is-small is-primary is-outlined floatRight">Add Friend</a>
+      <p ng-if="usersIndex.requested(user)" class="button is-small is-primary is-outlined floatRight">Requested!</p>
+
 
       <p><strong>@: {{ user.username }}</strong></p>
       <p>{{ user.full_name }}</p>
