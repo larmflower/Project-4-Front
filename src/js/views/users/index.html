@@ -20,7 +20,6 @@
         <p ng-if="usersIndex.isFriend(user)" class="button is-small is-primary is-outlined friend">You are Friends  <span>&#10004</span></p>
         <p ng-if="usersIndex.requested(user)" class="button is-small is-primary is-outlined friend">Requested!</p>
         <a ng-click="usersIndex.requestFriend(user)" ng-if="!usersIndex.isFriend(user) && !usersIndex.requested(user)" class="button is-small is-primary is-outlined">Add Friend</a>
-
       <p><strong>@: {{ user.username }}</strong></p>
       <p>{{ user.full_name }}</p>
 
