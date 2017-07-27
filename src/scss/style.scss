@@ -182,10 +182,11 @@ body {
   }
 
   .about {
-    background-image: url('../images/about.jpg');
+    background-image: url('../images/aboutTwo.jpg');
     background-size: cover;
     background-position: center;
     height: 500px;
+    border: 1px solid #d1d2d3;
   }
 
   .description {
@@ -298,10 +299,62 @@ textarea.comment {
   border: 1px solid #d9dce0;
   border-style: inset;
   border-radius: 4px;
-  min-width: 50%;
-  margin-left: 25%;
+  min-width: 80%;
+  margin-left: 20px;
+  margin-top: 4px;
+  padding: 10px;
+  max-height: 40px;
 }
 
 a.ng-binding {
   font-size: 12px;
+}
+
+.softBorder {
+  border: 1px solid #d9dce0;
+  padding: 8px;
+}
+
+hr {
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+    background-color: #d9dce0;
+}
+
+.noBorder {
+  border: none;
+}
+
+form.ng-pristine {
+  line-height: none;
+  background-color: #d9dce0;
+  max-height: 50px;
+  border-radius: 4px;
+}
+
+.commentButton {
+  margin-bottom: 60px;
+  padding-bottom: 20px;
+}
+
+.hoverUnderline:hover {
+  text-decoration: underline;
+}
+
+form.box {
+  min-height: 100vh;
+  background-color: white;
+}
+
+button.button {
+  padding: none;
+}
+
+.like {
+  margin-top: 20px;
 }

@@ -6,17 +6,16 @@
 
 <div class="section">
   <div class="columns is-multiline">
-
     <div ng-repeat="post in postsIndex.all track by $index" class="column is-half is-offset-one-quarter box">
-      <div>
+      <div class="softBorder">
           <h2>{{ post.headline }}</h2>
           <img ng-src="{{ post.image }}">
-          <h2>"{{ post.description }}"</h2>
-          <a href="{{ post.src }}" target="_blank">{{ post.src }}</a>
           <h3>@{{ post.user.username }}</h3>
-
+          <h2>{{ post.description }}</h2>
+          <a href="{{ post.src }}" target="_blank">{{ post.src }}</a>
 
           <button class="button is-small is-danger is-outlined" ng-click="postsIndex.delete(post)" ng-if="main.isAuthenticated() && main.currentUser.id === post.user.id">Delete</button>
+
 
           <!-- <div class="commentBlock" ng-if="main.isAuthenticated()">
             <form ng-submit="postsIndex.addComment(post)">
@@ -25,22 +24,27 @@
             </form>
           </div> -->
 
-          <div class="scroll">
+
+
+          <div class="scroll softBorder">
+
           <div ng-repeat="comment in post.comments">
-              <p class="softBorder">"{{ comment.body }}"</p>
-              <h5><a ui-sref="profile({ id: comment.user.id })">@{{ comment.user.username }}</a></h5>
-              <button ng-click="postsIndex.deleteComment(comment)" ng-if="main.isAuthenticated() && main.currentUser.id === comment.user_id" class="button is-small is-danger is-outlined">Delete</button>
+            <img class="is-small" ng-src="{{comment.user.urlToImage}}" alt="image">
+              <p class="inlineBlock"><strong><a ui-sref="profile({ id: comment.user.id })">@{{ comment.user.username }}:</a></strong></p>
+                <p class="inlineBlock">{{ comment.body }}</p>
+              <button ng-click="postsIndex.deleteComment(comment)" ng-if="main.isAuthenticated() && main.currentUser.id === comment.user_id" class="noBorder button is-small is-danger is-outlined"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+              <hr>
             </div>
           </div>
 
           <div ng-if="main.isAuthenticated()">
             <form ng-submit="postsIndex.addComment(post)">
               <textarea class="comment" ng-model="postsIndex.newComment.body"></textarea>
-              <br><button class="button is-small is-primary">Add Comment</button>
+              <button class="button is-primary is-outlined noBorder commentButton"><i class="fa fa-commenting-o" aria-hidden="true"></i></button>
             </form>
           </div>
 
-            <a ng-click="postsIndex.liked(post)" ng-if="main.isAuthenticated()" class="fa fa-thumbs-o-up fa-2x">Like</a><span> {{ post.posts_liked_ids.length }} </span>
+            <a ng-click="postsIndex.liked(post)" ng-if="main.isAuthenticated()" class="like fa fa-thumbs-o-up fa-2x"></a><span class="like"> {{ post.posts_liked_ids.length }} </span>
           </div>
         </div>
       </div>
