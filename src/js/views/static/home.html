@@ -2,12 +2,13 @@
 
 
 <div class="section grit">
+  <h2>Source</h2>
   <div class="field grit">
     <div class="control">
       <input type="text" class="input grit" ng-model="homectrl.q" placeholder="Filter articles by description..">
     </div>
   </div>
-  <div class="box" ng-repeat="article in homectrl.filtered">
+  <div class="box centered" ng-repeat="article in homectrl.filtered">
     <article class="media">
       <div class="media-left">
         <figure class="image is-128x128">
