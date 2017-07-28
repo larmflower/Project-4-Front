@@ -1,64 +1,88 @@
-### Using this Angular Gulp Setup
+# Project 4 Starter Code
 
-To get setup with the starter-code, you first need to run:
+ ## Introduction
 
-```sh
-$ bower install && gulp install
-```
 
-## How is gulp setup?
+Welcome to our repository for WDI-27's final project! We have created an Angular app with a Rails API and external API, News API, called Make News. Make News functions as a  social website that filters in multiple news sources which users can repost and share specific articles with their friends.
 
-Rather than trying to manage one giant `gulpfile.js` that is file responsible for creating multiple tasks, each task has been broken out into its own file and placed in a directory `tasks`. Any files in that directory get automatically required in the gulpfile using the `require-dir` npm package.
+## Installation and Setup
 
-To add a new task, simply add a new task file that directory.
+ Installation steps are listed below:
 
-/tasks/default.js specifies the default set of tasks to run
-when you run `gulp`.
+ * Download or clone this repo
+ * Copy `bundle` into your terminal to install gems for the api
+ * Copy `yarn` and `bower` into your terminal to install dependencies for the app
+ * Run `rails db:create`, `rails db:migrate`, `rails db:seed` in your terminal to seed your api. Then run `rails s` to 
+ * Run `gulp` in your terminal to compile the source code and open in browser for the app
+ * _Enjoy_!
 
-Configuration options are stored in the `package.json` file.
+### A short description
 
-When deploying, ensure that a `postinstall` script has been added to
-your package.json, e.g.
 
-```json
-"postinstall": "bower install && gulp deploy"
-```
+Make News is an app that allows users to login or register through our website or through instagram and facebook oauth. Users can browse articles from various news sources, repost articles to share on their friends' feed, and request/add/decline friendship.
 
-This setup expects that there is a bower.json file with at least ONE package
-installed. This will created a bower_components directory after
-the postinstall script has run.
+![Homepage](http://i.imgur.com/jnyOuoI.png)
 
-When deploying, this setup expects that the `NODE_ENV` is set to `production`.
-Also that the `NPM_CONFIG_PRODUCTION` is set to `false`. Then you can also set the `API_URL` to be the correct URL for your deployed app. This will automatically replace `http://localhost:3000` to be the correct url.
+![About](http://i.imgur.com/iTCgZoy.png)
 
-You can do this by running:
+ The app requires registration or logging in to access website content. Users can choose to login with Instagram, Facebook, or through our app. Additionally, once a user is verified they can post content and start adding friends.
 
-```bash
-$ heroku config:set NODE_ENV=production
-$ heroku config:set NPM_CONFIG_PRODUCTION=false
+![Login example](http://i.imgur.com/Z6gFoU9.png)
 
-# An example url
-$ heroku config:set API_URL=https://project-on-heroku.herokuapp.com/
-```
+![Profile example](http://i.imgur.com/4wbasi5.png)
 
-### Bower overrides
+ Posting articles is easy. Users can upload images through amazon-web-services and create their own posts, or they can repost articles from the news page.
 
-Sometimes, you might want to `override` the `main` file(s) for a specific Bower component. You can do this directly inside the `bower.json` file like this:
+ ![Friends](http://i.imgur.com/FIv4VTB.png)
 
-```json
-"overrides": {
-  "bootstrap": {
-    "main": [
-      "dist/css/bootstrap.css",
-      "dist/js/bootstrap.js",
-      "dist/fonts/*"
-    ]
-  },
-  "font-awesome": {
-    "main": [
-      "css/font-awesome.css",
-      "fonts/*"
-    ]
-  }
-},
-```
+ ![News API](http://i.imgur.com/0wGdxuM.png)
+
+ ![Posts](http://i.imgur.com/o40QWaC.png)
+
+
+### Technologies used
+
+ These are the languages and softwares used in this game:
+
+ - HTML 5
+ - SCSS
+ - Bootstrap
+ - Angular (ngMessages, ui.router, ngAnimate, ngResource)
+ - Rails
+ - News API
+ - Bulma
+ - Gulp
+ - Yarn
+ - NPM
+ - JWOT
+ - Bcrypt
+ - Balsamiq
+ - Imgur
+ - Satellizer
+ - Amazon Web Services
+ - Oauth: Instagram
+ - Oauth: Facebook
+ - Trello
+ - Git & github
+ - Heroku
+
+ ![Wireframe](http://i.imgur.com/935h6SK.png)
+
+ Oauth and bcrypt are used for user registration and login and Instagram and Google are available as login options. The News API is installed to filter in news sources for users to repost on their feed.
+
+### Challenges faced
+
+The biggest challenges were handling the three major components of our app: a rails API with complex relationships, an angular app, and an external API. It was key to our success to work as a team as we were able to split up work and provide a pair of second eyes to look over bugs and errors.
+
+### Rounding it off
+
+ For improvements we'd like to:
+
+- Add notifications for posts
+- Include a page for saved and liked posts
+- Include extra interactive icons for the article index page
+- Be able to cancel a friend request
+- Improve the friendship model for more complicated relationships: mutual friends, blocked, ect.
+
+
+ Interested in following our future projects? Link with us on Github [alexandriako](https://github.com/alexandriako), [larmflower](https://github.com/larmflower).
