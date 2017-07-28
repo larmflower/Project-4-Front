@@ -11,7 +11,7 @@
   </div><br>
 
   <div class="columns is-multiline">
-    <div ng-repeat="post in postsIndex.filtered track by $index" class="column is-half is-offset-one-quarter box">
+    <div ng-repeat="post in postsIndex.filtered track by $index" class="column is-half box postsMargin">
 
       <div>
         <h2>{{ post.headline }}</h2>
@@ -41,7 +41,7 @@
         <div ng-if="main.isAuthenticated()">
           <form ng-submit="postsIndex.addComment(post)">
             <textarea class="comment" ng-model="postsIndex.newComment.body"></textarea>
-            <br><button class="button is-primary is-outlined noBorder commentButton"><i class="fa fa-commenting-o" aria-hidden="true"></i></button>
+            <button class="button is-primary is-outlined noBorder commentButton"><i class="fa fa-commenting-o" aria-hidden="true"></i></button>
           </form>
         </div>
 
