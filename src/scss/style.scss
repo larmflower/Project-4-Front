@@ -87,11 +87,12 @@ $darkGrey: #34393F;
 }
 
 .grit {
+
   -webkit-mask-image: url('/images/bg.png');
   mask-image: url('/images/bg.png');
 }
 .buttonMargin {
-  margin-left: 10px;
+  margin: 0 auto;
 }
 
 .hideBox {
@@ -104,8 +105,6 @@ div.section {
 
 section.section {
   background-color: $background;
-
-
 }
 
 .backgroundColor {
@@ -409,9 +408,9 @@ img.inlineBlock.image.is-32x32 {
   margin: 0;
 }
 
-section.section {
-  min-width: 100vh;
-}
+// section.section {
+//   min-width: 100vw;
+// }
 
 h2.ng-binding {
   padding: 10px;
@@ -430,9 +429,18 @@ div.field {
 
 div.column.is-half {
   height: 100%;
+  margin: 0 auto;
 }
 
 .postsMargin {
   margin-left: 25%;
   max-width: 80% ;
+}
+
+div.drag-drop-img {
+margin: 0 auto;
+}
+
+p {
+  max-width: inherit;
 }

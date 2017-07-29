@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 
 
-<div class="section grit">
+<div class="section grit buttonMargin">
   <h2>Source</h2>
   <div class="field grit">
     <div class="control">
       <input type="text" class="input grit" ng-model="homectrl.q" placeholder="Filter articles by description..">
     </div>
   </div>
-  <div class="box centered" ng-repeat="article in homectrl.filtered">
+  <div class="box buttonMargin" ng-repeat="article in homectrl.filtered">
     <article class="media">
       <div class="media-left">
         <figure class="image is-128x128">
           <img src="{{article.urlToImage}}" alt="image">
         </figure>
       </div>
-      <div class="media-content">
-        <div class="content">
-          <p><strong>{{ article.title }}</strong> <a href="{{ article.url }}" target="_blank"><small class="hoverUnderline">{{ article.url }}</small></a> <small>{{ article.author }}</small><br>
+      <div class="media-content buttonMargin">
+        <div class="content articleContent buttonMargin">
+          <p class="buttonMargin"><strong>{{ article.title }}</strong> <a href="{{ article.url }}" target="_blank"><small class="hoverUnderline">{{ article.url }}</small></a> <small>{{ article.author }}</small><br>
             {{ article.description }}
           </p>
         </div>
@@ -38,7 +38,7 @@
     </article>
   </div>
 
-<div class="box">
+<div class="buttonMargin box">
   <div class="button buttonMargin is-primary" ng-click="homectrl.getArticle('bbc-news')">BBC </div>
   <div class="button buttonMargin is-primary" ng-click="homectrl.getArticle('buzzfeed')">Buzzfeed</div>
   <div class="button buttonMargin is-primary" ng-click="homectrl.getArticle('daily-mail')">Daily Mail UK</div>
