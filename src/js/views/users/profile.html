@@ -32,8 +32,8 @@
       <div ng-repeat="pending in usersShow.pending">
         <h4>{{ pending.username }}</h4>
         <img class="userImage" ng-src="{{pending.image}}">
-        <button ng-click="usersShow.accepted(pending)" class="button is-medium is-primary">Accept</button>
-        <button ng-click="usersShow.declined(pending)" class="button is-medium is-danger">Decline</button>
+        <button ng-click="usersShow.accepted(pending)" class="button is-small is-primary">Accept</button>
+        <button ng-click="usersShow.declined(pending)" class="button is-small is-danger">Decline</button>
       </div>
   </div>
 </div>

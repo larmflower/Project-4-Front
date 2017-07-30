@@ -93,6 +93,7 @@ $darkGrey: #34393F;
 }
 .buttonMargin {
   margin: 0 auto;
+
 }
 
 .hideBox {
@@ -122,8 +123,6 @@ section.section {
 body {
   margin: 0px;
   padding: 0px;
-
-
 
   nav {
     max-height: 50px;
@@ -255,8 +254,7 @@ img {
 .friendBlock {
   max-width: 300px;
   display: inline-block;
-  margin: 10px;
-  margin-bottom: none;
+  margin: 10px 10px;
   border: 1px solid #d1d2d3;
   max-height: 300px;
   border-radius: 3px;

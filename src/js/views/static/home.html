@@ -9,7 +9,7 @@
     </div>
   </div>
   <div class="box buttonMargin" ng-repeat="article in homectrl.filtered">
-    <article class="media">
+    <article class="media buttonMargin">
       <div class="media-left">
         <figure class="image is-128x128">
           <img src="{{article.urlToImage}}" alt="image">
@@ -17,7 +17,7 @@
       </div>
       <div class="media-content buttonMargin">
         <div class="content articleContent buttonMargin">
-          <p class="buttonMargin"><strong>{{ article.title }}</strong> <a href="{{ article.url }}" target="_blank"><small class="hoverUnderline">{{ article.url }}</small></a> <small>{{ article.author }}</small><br>
+          <p class="buttonMargin"><strong>{{ article.title }}</strong> <br><a href="{{ article.url }}" target="_blank"><small class="hoverUnderline">{{ article.url }}</small></a> <small>{{ article.author }}</small><br>
             {{ article.description }}
           </p>
         </div>
